@@ -1,0 +1,21 @@
+{
+  "name": "board-game-sharing",
+  "version": "1.0.0",
+  "description": "final project",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jypotheren734x/board-game-sharing.git"
+  },
+  "keywords": [
+    "board",
+    "game",
+    "sharing"
+  ],
+  "author": "Nick",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jypotheren734x/board-game-sharing/issues"
+  },
+  "homepage": "https://github.com/Jypotheren734x/board-game-sharing#readme"
+}
