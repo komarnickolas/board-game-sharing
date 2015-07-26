@@ -1,0 +1,26 @@
+{
+  "name": "board-game-sharing",
+  "version": "1.0.0",
+  "description": "**Added Files**",
+  "main": "index.js",
+  "dependencies": {
+    "ejs": "^2.3.3",
+    "express": "^4.9.8",
+    "mongodb": "^2.0.39",
+    "mongoose": "^4.0.8"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jypotheren734x/board-game-sharing.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jypotheren734x/board-game-sharing/issues"
+  },
+  "homepage": "https://github.com/Jypotheren734x/board-game-sharing#readme"
+}

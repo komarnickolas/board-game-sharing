@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href='css/stylesheet.css' type='text/css' rel='stylesheet'></link>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <meta charset="UTF-8"></meta>
+  </head>
+  <body>
+    <div id='nav'>
+      <ul>
+          <li id='Search'><a href='Search.html'>Search</a></li>
+          <li id='Forums'><a href='Forums.html'>Forums</a></li>
+          <li id='About'><a href='About.html'>About</a></li>
+          <li id='Login'><button id=Loginbtn >Login</button></li>
+          <li id='Username'></li>
+      </ul>
+    </div>
+    <div id='input'>
+      <input placeholder = 'What game?'></input>
+      <button>Enter</button>
+    </div>
+    <div id="openModal" class="modalDialog">
+      <div>
+        <a href="#close" title="Close" class="close">X</a>
+        <p>Login/Register</P>
+        <p><input placeholder="username"></input></p>
+        <p><input placeholder="password" type='password'></input></p>
+      </div>
+    </div>
+    <script src='js/Home.js'></script>
+  </body>
+</html>
