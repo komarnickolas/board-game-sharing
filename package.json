@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/Jypotheren734x/board-game-sharing/issues"
   },
-  "homepage": "https://github.com/Jypotheren734x/board-game-sharing#readme"
+  "homepage": "https://github.com/Jypotheren734x/board-game-sharing#readme",
+  "dependencies": {
+    "express": "^4.13.1"
+  }
 }
