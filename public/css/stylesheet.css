@@ -329,7 +329,6 @@ html{
 
 .modalDialog {
 	position: fixed;
-	font-family: Arial, Helvetica, sans-serif;
 	top: 0;
 	right: 0;
 	bottom: 0;
@@ -353,10 +352,10 @@ html{
 	margin: 10% auto;
 	padding: 5px 20px 13px 20px;
 	border-radius: 10px;
-	background: #fff;
-	background: -moz-linear-gradient(#fff, #999);
-	background: -webkit-linear-gradient(#fff, #999);
-	background: -o-linear-gradient(#fff, #999);
+	background: #228fa2;
+	background: -moz-linear-gradient(#228fa2, #1c8193);
+	background: -webkit-linear-gradient(#228fa2, #1c8193);
+	background: -o-linear-gradient(#228fa2, #1c8193);
 }
 .close {
 	background: #606061;
