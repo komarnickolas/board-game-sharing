@@ -2,8 +2,8 @@
 <html>
   <head>
     <link href='css/stylesheet.css' type='text/css' rel='stylesheet'></link>
-    <link rel="stylesheet" href="/fancybox/source/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
-    <script type="text/javascript" src="/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <meta charset="UTF-8"></meta>
   </head>
   <body>
     <div id='nav'>
@@ -11,7 +11,7 @@
           <li id='Search'><a href='Search.html'>Search</a></li>
           <li id='Forums'><a href='Forums.html'>Forums</a></li>
           <li id='About'><a href='About.html'>About</a></li>
-          <li id='Login'><button id=Loginbtn>Login</button></li>
+          <li id='Login'><button id=Loginbtn >Login</button></li>
           <li id='Username'></li>
       </ul>
     </div>
@@ -19,7 +19,42 @@
       <input placeholder = 'What game?'></input>
       <button>Enter</button>
     </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <div id="openModal" class="modalDialog">
+      <div>
+        <a href="#close" title="Close" class="close">X</a>
+        <input placeholder="username"></input>
+        <input placeholder="password" type='password'></input>
+      </div>
+    </div>
     <script src='js/Home.js'></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $(".fancybox").fancybox({
+          openEffect  : 'none',
+          closeEffect : 'none',
+          iframe : {
+          preload: false
+          }
+        });
+        $(".various").fancybox({
+          maxWidth    : 800,
+          maxHeight    : 600,
+          fitToView    : false,
+          width        : '70%',
+          height        : '70%',
+          autoSize    : false,
+          closeClick    : false,
+          openEffect    : 'none',
+          closeEffect    : 'none'
+          });
+          $('.fancybox-media').fancybox({
+          openEffect  : 'none',
+          closeEffect : 'none',
+          helpers : {
+          media : {}
+          }
+        });
+      });
+    </script>
   </body>
 </html>
