@@ -287,7 +287,7 @@
 #Login{
   float:right;
 }
-#Loginbtn {
+button {
   display: inline-block;
   width: 200px;
   height: 50px;
@@ -300,7 +300,7 @@
   transition: background-color 0.2s ease-out,
               border-color 0.2s ease-out;
 }
-#Loginbtn:hover,#Loginbtn:active {
+button:hover,button:active {
   background-color: #228fa2; /* fallback */
   background-color: rgba(255, 255, 255, 0.5);
   border-color: #228fa2; /* fallback */
@@ -315,7 +315,7 @@
   bottom: 0;
   left: 0;
   right: 0;
-  width: 206px;
+  width: 500px;
   height: 25px;
   margin: auto;
 }
@@ -371,3 +371,18 @@ html{
 	box-shadow: 1px 1px 3px #000;
 }
 .close:hover { background: #00d9ff; }
+#inputbox{
+  border-radius: none;
+  box-shadow: none;
+  border: none;
+  height: 50px;
+  width: 50%;
+  outline: 0;
+  background: transparent;
+  vertical-align: middle;
+  font-size: 30px;
+  transition: color .2s ease-in-out, opacity 2s ease-in-out;
+}
+#submitbtn{
+  width: 150px;
+}
