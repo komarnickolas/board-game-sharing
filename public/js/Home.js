@@ -4,4 +4,8 @@ $(document).ready(function(){
     console.log('clicked');
     window.location.href = "#openModal";
   });
+  $('#submitbtn').click(function(){
+    var searchQuery = $('#inputbox').val();
+    console.log(searchQuery);
+  });
 });
