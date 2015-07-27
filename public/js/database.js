@@ -41,4 +41,4 @@ $(document).ready(function(){
       success: console.log('success')
     });
   });
-}):
+});
