@@ -1,4 +1,5 @@
 $(document).ready(function(){
+  $('#Username').hide();
   var db = 'https://api.mongolab.com/api/1/databases/users';
   var collection = "/collections/usernames/55b6862ae4b077bc38f60527";
   var apiKey = '?apiKey=CmxO8Pu1HeEpa6MSJyWa3ceKlKExom1_';
@@ -68,6 +69,8 @@ $(document).ready(function(){
   }
   function loginUser(){
     $('#Login').remove();
-    $('#Username').append(userArray[userNumber].username);
+    $('#Username').show();
+    $('#UsernameLink').html(userArray[userNumber].username);
+    window.location.href = "#close";
   }
 });
