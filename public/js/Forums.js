@@ -17,10 +17,12 @@ Feedback.prototype.render = function() {
   var table = document.getElementById('comments');
   cell.innerHTML = this.user;
   table.appendChild(cell);
-
-}
+};
 
 document.getElementById('btn').addEventListener('click'), function() {
   var user = document.getElementById('user').value;
   var comment = document.getElementById('comment').value;
 }
+
+var post = new Feedback([0], [1]);
+post.render();
