@@ -22,7 +22,13 @@ $(document).ready(function(){
   var user = function(u,p){
     this.username = u;
     this.password = p;
-  };
+    this.games = [];
+  }
+  var game = function(n,s,c){
+    this.gameName = n;
+    this.gameStatus = s;
+    this.gameCondition = c;
+  }
   $.ajax({
     url: db + apiKey,
     type:'GET',
@@ -41,7 +47,9 @@ $(document).ready(function(){
     }
   });
   function saveUser(){
-    userArray.push(new user($('#username').val(),$('#password').val()));
+    userToAdd = new user($('#username').val(),$('#password').val());
+    userToAdd.games.push(new game("Example Game","Available","Good"));
+    userArray.push(userToAdd);
     var data = JSON.stringify({username: {userArray}});
     console.log(data);
     console.log(db+"/collections/usernames"+apiKey);
