@@ -68,8 +68,6 @@ $(document).ready(function(){
   }
   function loginUser(){
     $('#Login').hide();
-    console.log(userNumber);
-    console.log(userArray[userNumber]);
     $('#Username').append("<a herf='Profile.html'>"+userArray[userNumber].username+"</a>");
   }
 });
