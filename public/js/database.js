@@ -4,6 +4,23 @@ $(document).ready(function(){
   var collection = "/collections/usernames/55b6862ae4b077bc38f60527";
   var apiKey = '?apiKey=CmxO8Pu1HeEpa6MSJyWa3ceKlKExom1_';
   var userArray = [];
+
+  var userLoggedIn = false;
+  var retrievedIsUserLoggedIn = localStorage.getItem('IsUserLoggedIn');
+  if(retrievedIsUserLoggedIn != null){
+    userLoggedIn = true;
+    $('#Login').remove();
+  }
+  var currentUser = undefined;
+  if(userLoggedIn === true){
+    var retrievedCurrentUser = localStorage.getItem('CurrentUser');
+    if(retrievedCurrentUser != null){
+      currentUser = retrievedCurrentUser;
+      console.log(currentUser);
+      loginUser();
+    }
+  }
+
   var getExistingUsers = $.ajax({
       url:db + collection + apiKey,
       type: "GET",
@@ -38,10 +55,11 @@ $(document).ready(function(){
   var userNumber = -1;
   $('#submit').click(function(){
     var doesUserExist = false;
+    console.log(userArray.length);
     for(var x = 0; x<userArray.length;x++){
+      userNumber++;
       if(userArray[x].username === $('#username').val()){
         console.log("user already exists");
-        userNumber++;
         doesUserExist = true;
       }
     }
@@ -49,7 +67,10 @@ $(document).ready(function(){
       saveUser();
     }
     else{
+      console.log(userNumber);
+      currentUser = userArray[userNumber].username;
       loginUser();
+      window.location.href = "#close";
     }
   });
   function saveUser(){
@@ -68,9 +89,10 @@ $(document).ready(function(){
     });
   }
   function loginUser(){
-    $('#Login').remove();
     $('#Username').show();
-    $('#UsernameLink').html(userArray[userNumber].username);
-    window.location.href = "#close";
+    $('#UsernameLink').html(currentUser);
+    userLoggedIn = 'true';
+    localStorage.setItem('CurrentUser',currentUser);
+    localStorage.setItem('IsUserLoggedIn',userLoggedIn);
   }
 });
