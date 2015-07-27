@@ -386,7 +386,7 @@ html{
 #submitbtn {
   width: 150px;
 }
-#searchResults {
+#searchResults, #comments {
   width: 90%;
   margin: 5%;
 }
