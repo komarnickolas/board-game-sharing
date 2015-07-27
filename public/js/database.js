@@ -34,16 +34,21 @@ $(document).ready(function(){
     type:'GET',
     success: console.log("Connected to: "+db)
   });
+  var userNumber = -1;
   $('#submit').click(function(){
     var doesUserExist = false;
     for(var x = 0; x<userArray.length;x++){
       if(userArray[x].username === $('#username').val()){
         console.log("user already exists");
+        userNumber++;
         doesUserExist = true;
       }
     }
     if(doesUserExist === false){
       saveUser();
+    }
+    else{
+      loginUser();
     }
   });
   function saveUser(){
@@ -60,5 +65,11 @@ $(document).ready(function(){
       contentType: 'application/json',
       success: console.log('success')
     });
+  }
+  function loginUser(){
+    $('#Login').hide();
+    console.log(userNumber);
+    console.log(userArray[userNumber]);
+    $('#Username').append("<a herf='Profile.html'>"+userArray[userNumber].username+"</a>");
   }
 });
