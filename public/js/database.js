@@ -19,9 +19,10 @@ $(document).ready(function(){
   console.log(usersToLoad.username);
   userArray = usersToLoad.username.userArray;
   console.log(userArray);
-  var user = function(u,p){
+  var user = function(u,p,g){
     this.username = u;
     this.password = p;
+    this.games = [] || g;
   };
   $.ajax({
     url: db + apiKey,
