@@ -29,16 +29,23 @@ $(document).ready(function(){
     success: console.log("Connected to: "+db)
   });
   $('#submit').click(function(){
-    userArray.push(new user($('#username').val(),$('#password').val()));
-    var data = JSON.stringify({username: {userArray}});
-    console.log(data);
-    console.log(db+"/collections/usernames"+apiKey);
-    $.ajax({
-      url:db+"/collections/usernames"+apiKey,
-      method: 'PUT',
-      data: data,
-      contentType: 'application/json',
-      success: console.log('success')
-    });
+    for(var x = 0; x<userArray.length;x++){
+      if(userArray[x].username != $('#username').val()){
+        userArray.push(new user($('#username').val(),$('#password').val()));
+        var data = JSON.stringify({username: {userArray}});
+        console.log(data);
+        console.log(db+"/collections/usernames"+apiKey);
+        $.ajax({
+          url:db+"/collections/usernames"+apiKey,s
+          method: 'PUT',
+          data: data,
+          contentType: 'application/json',
+          success: console.log('success')
+        });
+      }
+      else{
+        console.log("user already exists");
+      }
+    }
   });
 });
