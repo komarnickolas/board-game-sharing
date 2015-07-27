@@ -7,5 +7,6 @@ $(document).ready(function(){
   $('#submitbtn').click(function(){
     var searchQuery = $('#inputbox').val();
     console.log(searchQuery);
+    localStorage.setItem('SearchQuery',searchQuery);
   });
 });
