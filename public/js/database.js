@@ -24,6 +24,10 @@ $(document).ready(function(){
     this.password = p;
     this.games = [] || g;
   };
+  var game = function(c,s){
+    this.condition = c;
+    this.currentStatus = s;
+  }
   $.ajax({
     url: db + apiKey,
     type:'GET',
