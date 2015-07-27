@@ -11,3 +11,16 @@
 - Search.js
 - Forum.js
 - stylesheet.css
+
+*7/27/15
+- database.js
+- resources
+- favicon.png
+
+**Added Features**
+
+*7/27/15
+- user login
+- user control
+- search from home page
+- login modal
