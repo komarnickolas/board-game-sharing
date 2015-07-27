@@ -67,7 +67,7 @@ $(document).ready(function(){
     });
   }
   function loginUser(){
-    $('#Login').hide();
-    $('#Username').append("<a herf='Profile.html'>"+userArray[userNumber].username+"</a>");
+    $('#Login').remove();
+    $('#Username').append(userArray[userNumber].username);
   }
 });
