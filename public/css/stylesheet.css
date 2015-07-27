@@ -383,6 +383,10 @@ html{
   font-size: 30px;
   transition: color .2s ease-in-out, opacity 2s ease-in-out;
 }
-#submitbtn{
+#submitbtn {
   width: 150px;
+}
+#searchResults {
+  width: 90%;
+  margin: 5%;
 }
