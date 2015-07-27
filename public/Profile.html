@@ -18,27 +18,23 @@
           <li id='Username'></li>
       </ul>
     </div>
+
     <div id="openModal" class="modalDialog">
       <div>
         <a href="#close" title="Close" class="close">X</a>
-        <p>Login/Register</P>
+        <p>Login/Register</p>
         <p><input id='username' placeholder="username"></input></p>
         <p><input id='password' placeholder="password" type='password'></input></p>
         <p><button id='submit'>Submit</button></p>
       </div>
     </div>
-    <div>
-      <input id='user' placeholder = 'Recipient?'></input>
-      <input id='comment' placeholder = 'Leave a comment!'></input>
-      <button id='btn'>Enter </button>
-    </div>
-    <table id='comments'>
-      <tr id='commenthead'>
-        <th id='user'>Username</th>
-        <th id='comment'>Comment</th>
-      </tr>
-    </table>
+
+    <div id='addGame'>
+      <h3>Add Game to Library</h3>
+      <input id='gameTitle' placeholder = 'Game Title'></input>
+      <input id='numPlayers' placeholder = 'Number of Players'></input>
+      <button id='addGame'>Submit</button>
     <script src='js/database.js'></script>
-    <script src='js/Forums.js'></script>
+    <script src='Profile.js'></script>
   </body>
 </html>
