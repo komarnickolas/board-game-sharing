@@ -371,17 +371,20 @@ html{
 	box-shadow: 1px 1px 3px #000;
 }
 .close:hover { background: #00d9ff; }
-#inputbox{
+input{
   border-radius: none;
   box-shadow: none;
   border: none;
   height: 50px;
   width: 50%;
   outline: 0;
+  font-size:20px;
   background: transparent;
   vertical-align: middle;
-  font-size: 30px;
   transition: color .2s ease-in-out, opacity 2s ease-in-out;
+}
+#inputbox{
+  font-size: 30px;
 }
 #submitbtn {
   width: 150px;
