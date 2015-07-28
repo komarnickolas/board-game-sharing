@@ -1,5 +1,6 @@
 $(document).ready(function(){
   $('#Username').hide();
+  $('#Logoutbtn').hide();
   var db = 'https://api.mongolab.com/api/1/databases/users';
   var collection = "/collections/usernames/55b6862ae4b077bc38f60527";
   var apiKey = '?apiKey=CmxO8Pu1HeEpa6MSJyWa3ceKlKExom1_';
