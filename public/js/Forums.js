@@ -12,19 +12,16 @@ var Feedback = function(name, comments) {
 
 Feedback.prototype.display = function() {
   var row = document.createElement('tr');
-  var table = document.getElementById('comments');
-
   var td = document.createElement('td');
+  var table = document.getElementById('comments');
   td.innerHTML = this.name;
   row.appendChild(td);
   table.appendChild(row);
 
-  var wow = document.getElementById('comment');
   var comm = document.createElement('td');
   comm.innerHTML = this.comments;
-  comm.style = "display: inline";
+  row.appendChild(comm);
   table.appendChild(comm);
-  console.log(comm)
 
 };
 $('#btn').click(function(){
