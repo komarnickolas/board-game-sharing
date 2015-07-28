@@ -1,7 +1,7 @@
 
 #searchResults, #comments {
   width: 90%;
-  margin: 5%;
+  margin: 2%;
 }
 /*Search.html CSS*/
 #fields{
@@ -19,7 +19,8 @@ tbody tr:nth-child(odd) {
    background-color: #40A2B4;
 }
 #searchTR{
-  font-size: 1.2em;
+  font-size: 1.1em;
+  margin: 1px;
 }
 #gameTitle, #owner{
   width: 25%;
@@ -32,7 +33,10 @@ tbody tr:nth-child(odd) {
 }
 
 #contactOwner{
-  width: 100px;
+  width: 140px;
+}
+h3{
+  margin: 3%;
 }
 #lowerSearch{
   display: inline-block;
