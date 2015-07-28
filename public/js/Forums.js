@@ -1,25 +1,37 @@
 $(document).ready(function(){
+  $('Username').hide();
   $('#Loginbtn').click(function(){
     console.log('clicked');
     window.location.href = "#openModal";
   });
-});
+
 var Feedback = function(name, comments) {
   this.name = name;
   this.comments = comments;
-  this.arr = [];
-}
+};
 
-Feedback.prototype.render = function() {
-  var cell = document.createElement('tr');
-  cell.id = this.user;
+Feedback.prototype.display = function() {
+  var row = document.createElement('tr');
+  var td = document.createElement('td');
+  var comm = document.createElement('td');
   var table = document.getElementById('comments');
-  cell.innerHTML = this.user;
-  table.appendChild(cell);
+  td.innerHTML = this.name;
+  row.appendChild(td);
+  table.appendChild(row);
+  comm.innerHTML = this.comments;
+  row.appendChild(comm);
+  table.appendChild(comm);
 
-}
+};
+$('#btn').click(function(){
+    var user = document.getElementById('user').value;
+    var comment = document.getElementById('comment').value;
+    var newcomment = new Feedback(user, comment);
+    console.dir(newcomment);
+    newcomment.display();
 
-document.getElementById('btn').addEventListener('click'), function() {
-  var user = document.getElementById('user').value;
-  var comment = document.getElementById('comment').value;
-}
+
+});
+
+
+});
