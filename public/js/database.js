@@ -1,15 +1,21 @@
 $(document).ready(function(){
+  $.ajax({
+    url: db + apiKey,
+    type:'GET',
+    success: console.log("Connected to database")
+  });
   $('#Username').hide();
+  $('#Logoutbtn').hide();
   var db = 'https://api.mongolab.com/api/1/databases/users';
   var collection = "/collections/usernames/55b6862ae4b077bc38f60527";
   var apiKey = '?apiKey=CmxO8Pu1HeEpa6MSJyWa3ceKlKExom1_';
   var userArray = [];
-
+  var userToAdd = undefined;
   var userLoggedIn = false;
   var retrievedIsUserLoggedIn = localStorage.getItem('IsUserLoggedIn');
   if(retrievedIsUserLoggedIn != null){
     userLoggedIn = true;
-    $('#Login').remove();
+    $('#Loginbtn').hide();
   }
   var currentUser = undefined;
   if(userLoggedIn === true){
@@ -20,7 +26,6 @@ $(document).ready(function(){
       loginUser();
     }
   }
-
   var getExistingUsers = $.ajax({
       url:db + collection + apiKey,
       type: "GET",
@@ -42,20 +47,19 @@ $(document).ready(function(){
     this.password = p;
     this.games = [];
   }
-  var game = function(n,s,c){
+  var game = function(n,s,c,p){
     this.gameName = n;
     this.gameStatus = s;
     this.gameCondition = c;
+    this.numberOfPlayers = p;
   }
-  $.ajax({
-    url: db + apiKey,
-    type:'GET',
-    success: console.log("Connected to: "+db)
-  });
+
   var userNumber = -1;
+
   $('#submit').click(function(){
     var doesUserExist = false;
     console.log(userArray.length);
+    userNumber = -1;
     for(var x = 0; x<userArray.length;x++){
       userNumber++;
       if(userArray[x].username === $('#username').val()){
@@ -72,6 +76,10 @@ $(document).ready(function(){
       loginUser();
       window.location.href = "#close";
     }
+  });
+  $('#Logoutbtn').click(function(){
+    console.log("clicked");
+    logoutUser();
   });
   function saveUser(){
     userToAdd = new user($('#username').val(),$('#password').val());
@@ -90,9 +98,20 @@ $(document).ready(function(){
   }
   function loginUser(){
     $('#Username').show();
+    $('#Loginbtn').hide();
+    $('#Logoutbtn').show();
     $('#UsernameLink').html(currentUser);
     userLoggedIn = 'true';
     localStorage.setItem('CurrentUser',currentUser);
     localStorage.setItem('IsUserLoggedIn',userLoggedIn);
+  }
+  function logoutUser(){
+    $('#Username').hide();
+    $('#Logoutbtn').hide();
+    $('#Loginbtn').show();
+    $('#UsernameLink').html();
+    userLoggedIn = null;
+    localStorage.removeItem('CurrentUser');
+    localStorage.removeItem('IsUserLoggedIn');
   }
 });
