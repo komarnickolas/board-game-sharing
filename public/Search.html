@@ -32,42 +32,44 @@
     </div>
 
     <div id='fields'>
-
-      <div id 'searchHeader'>
-        <h2>Search<h2/>
-          <input placeholder = 'What Game Are You Looking For'></input>
-          <button>Search</button>
-          <h3>Or</h3>
-          <input placeholder = 'How Many Players?'></input>
-          <button>Search</button>
-      </div>
-
-      <div id 'results'>
-
-        <h2>Results</h2>
+      <div>
+        <h3>Library</h3>
 
         <table id='searchResults'>
-          <tr id='tableH'>
-            <th id='gameTitle'> Game Title </th>
+          <tr id='searchTR'>
+            <th id='gameTitle'>Game Title</th>
 
-            <!-- <td>??</td> -->
             <!-- auto populated  -->
 
-            <th id='numPlayers'> Number of Players </th>
+            <th id='numPlayers'>Number of Players</th>
 
-            <!-- <td>??</td> -->
             <!-- auto populated -->
 
-            <th id='header'> Owner </th>
+            <th id='status'>Current Status</th>
+            <th id='header'>Owner</th>
 
-            <!-- <td>??</td> -->
             <!-- auto populated -->
-
-            <button id='contactOwner'>Contact Owner</button>
 
             <!-- ????How do we implement this? checkbox for desired game? each item in list becomes a button for contact???? -->
+
           </tr>
         </table>
+        <button id='contactOwner'>Contact Owner</button>
+      </div>
+
+      <div id='lowerSearch'>
+        <h3>Search Library</h3>
+
+          <div id='lSLeft'>
+            <input class='searchInput' placeholder = 'Game Title?'></input>
+            <button class='searchBtn'>Search</button>
+          </div>
+
+          <div id='lSRight'>
+            <input class='searchInput'placeholder = 'How Many Players?'></input>
+            <button class='searchBtn'>Search</button>
+          </div>
+
       </div>
     </div>
     <script src='js/database.js'></script>
