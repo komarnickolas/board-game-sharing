@@ -18,9 +18,9 @@ Feedback.prototype.display = function() {
   td.innerHTML = this.name;
   row.appendChild(td);
   table.appendChild(row);
-  // comm.innerHTML = this.comments;
-  // row.appendChild(comm);
-  // table.appendChild(comm);
+  comm.innerHTML = this.comments;
+  row.appendChild(comm);
+  table.appendChild(comm);
 
 };
 $('#btn').click(function(){
