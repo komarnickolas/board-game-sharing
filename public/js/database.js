@@ -10,7 +10,7 @@ $(document).ready(function(){
   var retrievedIsUserLoggedIn = localStorage.getItem('IsUserLoggedIn');
   if(retrievedIsUserLoggedIn != null){
     userLoggedIn = true;
-    $('#Login').remove();
+    $('#Loginbtn').hide();
   }
   var currentUser = undefined;
   if(userLoggedIn === true){
@@ -57,6 +57,7 @@ $(document).ready(function(){
   $('#submit').click(function(){
     var doesUserExist = false;
     console.log(userArray.length);
+    userNumber = -1;
     for(var x = 0; x<userArray.length;x++){
       userNumber++;
       if(userArray[x].username === $('#username').val()){
@@ -73,6 +74,10 @@ $(document).ready(function(){
       loginUser();
       window.location.href = "#close";
     }
+  });
+  $('#Logoutbtn').click(function(){
+    console.log("clicked");
+    logoutUser();
   });
   function saveUser(){
     userToAdd = new user($('#username').val(),$('#password').val());
@@ -91,9 +96,20 @@ $(document).ready(function(){
   }
   function loginUser(){
     $('#Username').show();
+    $('#Loginbtn').hide();
+    $('#Logoutbtn').show();
     $('#UsernameLink').html(currentUser);
     userLoggedIn = 'true';
     localStorage.setItem('CurrentUser',currentUser);
+    localStorage.setItem('IsUserLoggedIn',userLoggedIn);
+  }
+  function logoutUser(){
+    $('#Username').hide();
+    $('#Logoutbtn').hide();
+    $('#Loginbtn').show();
+    $('#UsernameLink').html();
+    userLoggedIn = null;
+    localStorage.setItem('CurrentUser',"");
     localStorage.setItem('IsUserLoggedIn',userLoggedIn);
   }
 });
