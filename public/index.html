@@ -9,14 +9,13 @@
   </head>
   <body>
     <div id='nav'>
-      <ul>
+      <ul id='navList'>
           <li id='Home'><a href='index.html'>Home</a></li>
           <li id='Search'><a href='Search.html'>Search</a></li>
           <li id='Forums'><a href='Forums.html'>Forums</a></li>
           <li id='About'><a href='About.html'>About</a></li>
-          <li id='Profile'><a href='Profile.html'>Profile</a></li>
-          <li id='Login'><button id='Loginbtn' >Login</button></li>
-          <li id='Username'></li>
+          <li id='Login'><button id='Loginbtn' style='display: none'>Login</button><button id='Logoutbtn' style='display: none'>Logout</button></li>
+          <li id='Username'><a href='Profile.html' id='UsernameLink'></a></li>
       </ul>
     </div>
     <div id='input'>
@@ -24,12 +23,28 @@
       <button id='submitbtn'>Enter</button>
     </div>
     <div id="openModal" class="modalDialog">
-      <div>
-        <a href="#close" title="Close" class="close">X</a>
-        <p>Login/Register</P>
-        <p><input id='username' placeholder="username"></input></p>
-        <p><input id='password' placeholder="password" type='password'></input></p>
-        <p><button id='submit'>Submit</button></p>
+      <div class="wrapper">
+      	<div class="container">
+          <a href="#close" title="Close" class="close">X</a>
+      		<h1>Login/Register</h1>
+      		<form class="form">
+      			<input placeholder="Username" id='username'></input>
+      			<input type="password" placeholder="Password" id='password'></input>
+      			<button type="submit" id="login-button">Login</button>
+      		</form>
+      	</div>
+      	<ul class="bg-bubbles">
+      		<li></li>
+      		<li></li>
+      		<li></li>
+      		<li></li>
+      		<li></li>
+      		<li></li>
+      		<li></li>
+      		<li></li>
+      		<li></li>
+      		<li></li>
+      	</ul>
       </div>
     </div>
     <script src='js/database.js'></script>
