@@ -59,7 +59,10 @@ $(document).ready(function(){
 
   var userNumber = -1;
 
-  $('#submit').click(function(){
+  $('#login-button').click(function(){
+    event.preventDefault();
+    $('form').fadeOut(500);
+    $('.wrapper').addClass('form-success');
     var doesUserExist = false;
     console.log(userArray.length);
     userNumber = -1;
