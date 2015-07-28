@@ -11,9 +11,10 @@ var Feedback = function(name, comments) {
 };
 
 Feedback.prototype.display = function() {
+  var table = document.getElementById('table');
   var row = document.createElement('tr');
+
   var td = document.createElement('td');
-  var table = document.getElementById('comments');
   td.innerHTML = this.name;
   row.appendChild(td);
   table.appendChild(row);
@@ -21,14 +22,13 @@ Feedback.prototype.display = function() {
   var comm = document.createElement('td');
   comm.innerHTML = this.comments;
   row.appendChild(comm);
-  table.appendChild(comm);
+  table.appendChild(row);
 
 };
 $('#btn').click(function(){
     var user = document.getElementById('user').value;
     var comment = document.getElementById('comment').value;
     var newcomment = new Feedback(user, comment);
-    console.dir(newcomment);
     newcomment.display();
 });
 });
