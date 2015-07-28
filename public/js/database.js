@@ -26,6 +26,9 @@ $(document).ready(function(){
       loginUser();
     }
   }
+  else{
+    logoutUser();
+  }
   var getExistingUsers = $.ajax({
       url:db + collection + apiKey,
       type: "GET",
