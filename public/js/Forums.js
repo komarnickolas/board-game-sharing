@@ -1,4 +1,5 @@
 $(document).ready(function(){
+  $('Username').hide();
   $('#Loginbtn').click(function(){
     console.log('clicked');
     window.location.href = "#openModal";
@@ -17,8 +18,11 @@ Feedback.prototype.display = function() {
   td.innerHTML = this.name;
   row.appendChild(td);
   table.appendChild(row);
+  // comm.innerHTML = this.comments;
+  // row.appendChild(comm);
+  // table.appendChild(comm);
+
 };
-// td append to row
 $('#btn').click(function(){
     var user = document.getElementById('user').value;
     var comment = document.getElementById('comment').value;
