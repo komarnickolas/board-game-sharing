@@ -1,11 +1,16 @@
 $(document).ready(function(){
+  $.ajax({
+    url: db + apiKey,
+    type:'GET',
+    success: console.log("Connected to database")
+  });
   $('#Username').hide();
   $('#Logoutbtn').hide();
   var db = 'https://api.mongolab.com/api/1/databases/users';
   var collection = "/collections/usernames/55b6862ae4b077bc38f60527";
   var apiKey = '?apiKey=CmxO8Pu1HeEpa6MSJyWa3ceKlKExom1_';
   var userArray = [];
-
+  var userToAdd = undefined;
   var userLoggedIn = false;
   var retrievedIsUserLoggedIn = localStorage.getItem('IsUserLoggedIn');
   if(retrievedIsUserLoggedIn != null){
@@ -21,7 +26,6 @@ $(document).ready(function(){
       loginUser();
     }
   }
-
   var getExistingUsers = $.ajax({
       url:db + collection + apiKey,
       type: "GET",
@@ -43,17 +47,15 @@ $(document).ready(function(){
     this.password = p;
     this.games = [];
   }
-  var game = function(n,s,c){
+  var game = function(n,s,c,p){
     this.gameName = n;
     this.gameStatus = s;
     this.gameCondition = c;
+    this.numberOfPlayers = p;
   }
-  $.ajax({
-    url: db + apiKey,
-    type:'GET',
-    success: console.log("Connected to: "+db)
-  });
+
   var userNumber = -1;
+
   $('#submit').click(function(){
     var doesUserExist = false;
     console.log(userArray.length);
