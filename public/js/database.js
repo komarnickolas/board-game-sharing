@@ -65,6 +65,7 @@ $(document).ready(function(){
     $('.wrapper').addClass('form-success');
     var doesUserExist = false;
     console.log(userArray.length);
+    console.log($('#username').val());
     userNumber = -1;
     for(var x = 0; x<userArray.length;x++){
       userNumber++;
@@ -78,7 +79,7 @@ $(document).ready(function(){
     }
     else{
       console.log(userNumber);
-      currentUser = userArray[userNumber].username;
+      currentUser = $('#username').val();
       loginUser();
       window.location.href = "#close";
     }
@@ -110,6 +111,7 @@ $(document).ready(function(){
     userLoggedIn = 'true';
     localStorage.setItem('CurrentUser',currentUser);
     localStorage.setItem('IsUserLoggedIn',userLoggedIn);
+    console.log(localStorage.getItem('CurrentUser'));
   }
   function logoutUser(){
     $('#Username').hide();
