@@ -288,6 +288,10 @@
 #Login{
   float:right;
 }
+#Loginbtn, #Logoutbtn{
+  width: 100%;
+  height: 100%;
+}
 #Username{
   float:right;
 }
