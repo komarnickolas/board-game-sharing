@@ -69,7 +69,9 @@ $(document).ready(function(){
     userNumber = -1;
     for(var x = 0; x<userArray.length;x++){
       userNumber++;
-      if(userArray[x].username === $('#username').val()){
+      var boxValue = $('#username').val();
+      var selectedUser = ""+userArray[x].username;
+      if(selectedUser.toLowerCase() === boxValue.toLowerCase()){
         console.log("user already exists");
         doesUserExist = true;
       }
