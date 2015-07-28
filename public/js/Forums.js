@@ -12,15 +12,19 @@ var Feedback = function(name, comments) {
 
 Feedback.prototype.display = function() {
   var row = document.createElement('tr');
-  var td = document.createElement('td');
-  var comm = document.createElement('td');
   var table = document.getElementById('comments');
+
+  var td = document.createElement('td');
   td.innerHTML = this.name;
   row.appendChild(td);
   table.appendChild(row);
+
+  var wow = document.getElementById('comment');
+  var comm = document.createElement('td');
   comm.innerHTML = this.comments;
-  row.appendChild(comm);
+  comm.style = "display: inline";
   table.appendChild(comm);
+  console.log(comm)
 
 };
 $('#btn').click(function(){
@@ -29,9 +33,5 @@ $('#btn').click(function(){
     var newcomment = new Feedback(user, comment);
     console.dir(newcomment);
     newcomment.display();
-
-
 });
-
-
 });
