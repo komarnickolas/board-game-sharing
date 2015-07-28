@@ -17,6 +17,14 @@
 - resources
 - favicon.png
 
+*7/28/15
+- About.css
+- Home.css
+- Search.css
+- Forum.css
+- nav.css
+- login.css
+
 **Added Features**
 
 *7/27/15
@@ -24,3 +32,8 @@
 - user control
 - search from home page
 - login modal
+
+*7/28/15
+- BUBLES on login!
+- login styled
+- Stylesheets split up
