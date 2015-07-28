@@ -13,10 +13,24 @@
   padding: 3px;
   width: 75%;
   margin-left: 12.5%;
+  margin-top:5%;
 }
 tbody tr:nth-child(odd) {
    background-color: #40A2B4;
 }
+#searchTR{
+  font-size: 1.2em;
+}
+#gameTitle, #owner{
+  width: 25%;
+}
+#numPlayers{
+  width: 10%;
+}
+#condition, #status{
+  width: 20%;
+}
+
 #contactOwner{
   width: 100px;
 }
