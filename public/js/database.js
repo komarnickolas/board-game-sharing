@@ -109,7 +109,7 @@ $(document).ready(function(){
     $('#Loginbtn').show();
     $('#UsernameLink').html();
     userLoggedIn = null;
-    localStorage.setItem('CurrentUser',"");
-    localStorage.setItem('IsUserLoggedIn',userLoggedIn);
+    localStorage.removeItem('CurrentUser');
+    localStorage.removeItem('IsUserLoggedIn');
   }
 });
