@@ -21,6 +21,15 @@ html {
   background-color:#222;
   font-family: helvetica;
 }
+#mediaBox{
+  text-decoration: center;
+  vertical-align: center;
+  display: inline-block;
+  width: 20%;
+  margin-right: 40%;
+  margin-left: 40%;
+  border: 1px red dashed;
+}
 
 #container {
   width:690px;
