@@ -1,0 +1,43 @@
+
+#searchResults, #comments {
+  width: 90%;
+  margin: 5%;
+}
+/*Search.html CSS*/
+#fields{
+  text-align: center;
+  color: white;
+}
+#searchResults{
+  border: 2px solid #035f70;
+  padding: 3px;
+  width: 75%;
+  margin-left: 12.5%;
+}
+tbody tr:nth-child(odd) {
+   background-color: #40A2B4;
+}
+#contactOwner{
+  width: 100px;
+}
+#lowerSearch{
+  display: inline-block;
+  width: 70%;
+  margin left: 5%;
+}
+.searchInput{
+  width: 55%;
+  text-align: center;
+  font-size: 1em;
+  display: inline;
+}
+#lSLeft{
+  float: left;
+
+}
+#lSRight{
+  float: right;
+}
+.searchBtn{
+  width:100px;
+}
