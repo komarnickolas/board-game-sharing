@@ -11,7 +11,7 @@ $(document).ready(function(){
   for(var x = 0; x<userArray.length; x++){
     for(var y = 0; y<userArray[x].games.length; y++){
       $('#content').append('<tr id="newrow'+y+'"></tr>');
-      $('#newrow'+y).append('<td id="'+userArray[x].games[y].gameName+'">'+userArray[x].games[y].gameName+'</td>');
+      $('#newrow'+y).append('<td id="'+y+'">'+userArray[x].games[y].gameName+'</td>');
       $('#newrow'+y).append('<td>'+userArray[x].games[y].numberOfPlayers+'</td>');
       $('#newrow'+y).append('<td>'+userArray[x].games[y].gameCondition+'</td>');
       $('#newrow'+y).append('<td>'+userArray[x].games[y].gameStatus+'</td>');
@@ -22,10 +22,14 @@ $(document).ready(function(){
   $('#searchbtn').click(function(){
     var query = $('#searchinput').val();
     $('#searchinput').val("");
-    console.log(query);
     for(var x = 0; x<tableSize; x++){
-      if($('#newrow'+x).val() === query){
+      var currentRow = $('#'+x).text();
+      if(currentRow === query){
         console.log('found');
+      }
+      else{
+        $('#newrow'+x).remove();
+        console.log('not found');
       }
     }
   });
