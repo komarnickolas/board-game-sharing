@@ -6,11 +6,6 @@ $(document).ready(function(){
     type:'GET',
     success: console.log("Connected to database")
   });
-  $('Username').hide();
-  $('#Loginbtn').click(function(){
-    console.log('clicked');
-    window.location.href = "#openModal";
-  });
   var Feedback = function(name, comments) {
     this.name = name;
     this.comments = comments;
@@ -29,6 +24,12 @@ $(document).ready(function(){
     row.appendChild(comm);
     table.appendChild(row);
   };
+  getForumsStatus();
+  $('Username').hide();
+  $('#Loginbtn').click(function(){
+    console.log('clicked');
+    window.location.href = "#openModal";
+  });
   $('#btn').click(function(){
       var user = document.getElementById('user').value;
       var comment = document.getElementById('comment').value;
@@ -47,4 +48,26 @@ $(document).ready(function(){
         success: console.log('success')
       });
   });
+  function getForumsStatus(){
+    var fs = $.ajax({
+      url: db + forumCollection + apiKey,
+      type: "GET",
+      async: false,
+    	contentType: "application/json",
+    	dataType: 'json',
+    	success: function(data)
+      	{
+          console.log("Success");
+      	}
+    });
+    console.log(fs.responseText);
+    var existingForums = JSON.parse(fs.responseText);
+    console.log(existingForums.forums.forumsStatus);
+    forumsStatus = existingForums.forums.forumsStatus;
+    console.log(forumsStatus);
+    for(var x = 0; x<forumsStatus.length;x++){
+      var popForum = new Feedback(forumsStatus[x].name, forumsStatus[x].comments);
+      popForum.display();
+    }
+  }
 });
