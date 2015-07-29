@@ -48,6 +48,10 @@ $(document).ready(function(){
         success: console.log('success')
       });
   });
+  $('#del').click(function(){
+    document.getElementById('table').deleteRow(-1);
+  });
+
   function getForumsStatus(){
     var fs = $.ajax({
       url: db + forumCollection + apiKey,
