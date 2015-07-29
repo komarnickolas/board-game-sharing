@@ -23,6 +23,15 @@ $(document).ready(function(){
     comm.innerHTML = this.comments;
     row.appendChild(comm);
     table.appendChild(row);
+
+    var tt = document.createElement('td');
+    tt.innerHTML = t;
+    var btn = document.createElement('button');
+    var t = document.createTextNode('Delete');
+    btn.appendChild(t);
+    row.appendChild(btn);
+    table.appendChild(row);
+
   };
   getForumsStatus();
   $('Username').hide();
@@ -37,6 +46,8 @@ $(document).ready(function(){
       newcomment.display();
       forumsStatus.push(newcomment);
       console.log(forumsStatus);
+
+
       var data = JSON.stringify({forums: {forumsStatus}});
       console.log(data);
       console.log(db+collection+apiKey);
