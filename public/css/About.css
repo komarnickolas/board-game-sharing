@@ -18,7 +18,22 @@
 /* Social Media */
 
 @import url('//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css');
+footer {
+  border: solid #035F70;
+  background-color: #057C92;
+  position: absolute;
+  width: 100%;
+  height:70px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+#copy {
+  width: 30%;
+  text-align: right;
+  margin-top: 20px;
+  float: right;
 
+}
 a, a:hover {
   text-decoration: none;
 }
