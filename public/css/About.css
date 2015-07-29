@@ -1,0 +1,110 @@
+#p1, #p2{
+  color: #FFFFFF;
+  text-indent: 20px;
+  width: 85%;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+#photo{
+  display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 35%;
+    opacity: 0.92;
+
+}
+
+/* Social Media */
+
+@import url('//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css');
+
+a, a:hover {
+  text-decoration: none;
+}
+
+.socialbtns, .socialbtns ul, .socialbtns li {
+  margin: 0;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.socialbtns li {
+    list-style: none outside none;
+    display: inline-block;
+}
+
+.socialbtns .fa {
+  width: 40px;
+    height: 40px;
+  color: #035f70;
+  background-color: #69BCCC;
+  border: 1px solid #035f70;
+  padding-top: 12px;
+  border-radius: 22px;
+  -moz-border-radius: 22px;
+  -webkit-border-radius: 22px;
+  -o-border-radius: 22px;
+}
+
+.socialbtns .fa:hover {
+  transition: all 400ms ease-in-out;
+  color: #69bccc;
+  background-color: #035f70;
+  border: 1px solid #69bccc;
+}
+
+
+/*This line down is work prior to James' social media icons*/
+
+/*html {
+  background-color:#222;
+  font-family: helvetica;
+}
+
+#container {
+  width:690px;
+  height:50px;
+  margin:50px auto;
+
+}
+
+#container h1 {
+  font-weight: normal;
+  color:#fff;
+  text-align:center;
+  color:#356245;
+  padding-bottom:25px;
+}*/
+
+/* ---------- Line ---------- */
+
+.button {
+   transition:all .25s ease-in-out;
+   -moz-transition:all .25s ease-in-out;
+   -webkit-transition:all .25s ease-in-out;
+
+  float:left;
+  height:30px;
+  width:30px;
+  margin-left:15px;
+  opacity:.5;
+}
+
+.button:hover {
+   transition:all .25s ease-in-out;
+   -moz-transition:all .25s ease-in-out;
+   -webkit-transition:all .25s ease-in-out;
+  opacity:1;
+
+  margin-top:-10px;
+  -webkit-box-shadow:  0px 3px 10px 2px rgba(0, 0, 0, .5);
+  box-shadow:  0px 3px 6px 1px rgba(0, 0, 0, .5);
+}
+
+.button img {
+  margin-top:-10px;
+  margin-left:-10px;
+}
+
+\
