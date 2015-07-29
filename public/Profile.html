@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet"> <!-- social media link -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet"> <!-- social media link -->
     <link href='css/Profile.css' type='text/css' rel='stylesheet'></link>
     <link href='css/stylesheet.css' type='text/css' rel='stylesheet'></link>
     <link href='css/nav.css' type='text/css' rel='stylesheet'></link>
@@ -73,9 +73,46 @@
         <tbody id = 'tablebody'>
           <tr id='addagame'>
             <td><input id='gamesTitle' placeholder="title"></input></td>
-            <td><input id='gamesNumberOfPlayers' placeholder="number of players"></input></td>
-            <td><input id='gamesStatus' placeholder="status"></input></td>
-            <td><input id='gamesCondition' placeholder="condition"></input></td>
+            <td><!-- <input id='gamesNumberOfPlayers' placeholder="number of players"> -->
+              <!-- <form name='minPLayer'> -->
+                <select id='minDrop'>
+                  <option value='1'>Minimun 1</option>
+                  <option value='2'>2</option>
+                  <option value='3'>3</option>
+                  <option value='4'>4</option>
+                  <option value='5'>5</option>
+                  <option value='6'>6</option>
+                  <option value='7'>7</option>
+                  <option value='8'>8+</option>
+                </select>
+              <!-- </form> -->
+                <select id='maxDrop'>
+                  <option value='1'>Maximum 1</option>
+                  <option value='2'>2</option>
+                  <option value='3'>3</option>
+                  <option value='4'>4</option>
+                  <option value='5'>5</option>
+                  <option value='6'>6</option>
+                  <option value='7'>7</option>
+                  <option value='8'>8+</option>
+                </select>
+            </input></td>
+            <td><!-- <input id='gamesStatus' placeholder="status"> -->
+              <select id='statusDrop'>
+                  <option value='checkedIn'>Checked In</option>
+                  <option value='checkedOut'>Checked Out</option>
+            </input></td>
+            <td><!-- <input id='gamesCondition' placeholder="condition"> -->
+                <select id='conditionDrop'>
+                  <option value='5'>5 (best)</option>
+                  <option value='4'>4</option>
+                  <option value='3'>3</option>
+                  <option value='2'>2</option>
+                  <option value='1'>1 (worst)</option>
+                  <option value='incomplete'>Incomplete</option>
+                </select>
+
+            </input></td>
           </tr>
         </tbody>
       </table>

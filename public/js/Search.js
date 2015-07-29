@@ -14,9 +14,10 @@ $(document).ready(function(){
       tableSize++;
     }
   }
-  $('#searchbtn').click(function(){
-    var query = $('#searchinput').val();
-    $('#searchinput').val("");
+  $('#searchbtn').click(function(e){
+    e.preventDefault();
+    var query = $('#title').val();
+    $('#title').val("");
     for(var z = 0; z<tableSize; z++){
       $('#newrow'+z).remove();
     }
