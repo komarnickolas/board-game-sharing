@@ -14,7 +14,7 @@ $(document).ready(function(){
     $('#content').append('<tr id="newrow'+spot+'"></tr>');
     $('#newrow'+spot).append('<td>'+this.name+'</td>');
     $('#newrow'+spot).append('<td>'+this.comments+'</td>');
-    $('#newrow'+spot).append('<button id="del"> <image src="css/resources/minus.png"></image></button>');
+    $('#newrow'+spot).append('<button id="del'+spot+'"> <image src="css/resources/minus.png"></image></button>');
   };
   getForumsStatus();
   $('Username').hide();
@@ -40,7 +40,9 @@ $(document).ready(function(){
       });
 
   });
-
+  $('button').click(function(){
+    $('#del'+spot).parent().remove();
+  });
   function getForumsStatus(){
     var fs = $.ajax({
       url: db + forumCollection + apiKey,
