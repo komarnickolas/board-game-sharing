@@ -49,14 +49,6 @@ h3{
   font-size: 1em;
   display: inline;
 }
-#lSLeft{
-  float: left;
-
-}
-#lSRight{
-  float: right;
-}
 .searchBtn{
   width:100px;
 }
-

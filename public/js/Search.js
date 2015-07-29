@@ -14,7 +14,8 @@ $(document).ready(function(){
       tableSize++;
     }
   }
-  $('#searchbtn').click(function(){
+  $('#searchbtn').click(function(e){
+    e.preventDefault();
     var query = $('#searchinput').val();
     $('#searchinput').val("");
     for(var z = 0; z<tableSize; z++){
