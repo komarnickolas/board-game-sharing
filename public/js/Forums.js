@@ -31,6 +31,7 @@ $(document).ready(function(){
     btn.appendChild(t);
     row.appendChild(btn);
     table.appendChild(row);
+    btn.addEventListener('click', deleteRow);
 
   };
   getForumsStatus();
@@ -56,9 +57,12 @@ $(document).ready(function(){
         method: 'PUT',
         data: data,
         contentType: 'application/json',
-        success: console.log('success')
+        success: console.log('successful data save')
       });
   });
+  function deleteRow(e) {
+    console.dir(e);
+  }
   $('#del').click(function(){
     document.getElementById('table').deleteRow(-1);
   });
@@ -72,17 +76,21 @@ $(document).ready(function(){
     	dataType: 'json',
     	success: function(data)
       	{
+          dataReceived(data);
           console.log("Success");
+          console.dir(data);
       	}
     });
-    console.log(fs.responseText);
-    var existingForums = JSON.parse(fs.responseText);
-    console.log(existingForums.forums.forumsStatus);
-    forumsStatus = existingForums.forums.forumsStatus;
-    console.log(forumsStatus);
+    function dataReceived(data) {
+    console.dir(data);
+    // var existingForums = JSON.parse(fs.responseText);
+    // console.log(existingForums.forums.forumsStatus);
+    forumsStatus = data.forums.forumsStatus;
     for(var x = 0; x<forumsStatus.length;x++){
       var popForum = new Feedback(forumsStatus[x].name, forumsStatus[x].comments);
       popForum.display();
     }
+
   }
+}
 });
