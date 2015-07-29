@@ -37,4 +37,8 @@
 - BUBLES on login!
 - login styled
 - Stylesheets split up
+<<<<<<< HEAD
+- Added Profile for users to add games into library
+=======
 - Social Media Links currently on About page inspired by  http://codepen.io/vpdemo/pen/dPdymj
+>>>>>>> c699a90dff8a2e4f96faf3a352f71303fe292026

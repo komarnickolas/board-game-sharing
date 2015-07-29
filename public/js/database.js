@@ -79,7 +79,11 @@ $(document).ready(function(){
       }
     }
     if(doesUserExist === false){
+      userArray.push(new user($('#username').val(),$('#password').val()));
+      currentUser = $('#username').val();
       saveUsers();
+      window.location.href = "#close";
+      loginUser();
     }
     else{
       console.log(userNumber);
@@ -116,9 +120,9 @@ $(document).ready(function(){
 var saveUsers = function(){
   var data = JSON.stringify({username: {userArray}});
   console.log(data);
-  console.log(db+"/collections/usernames"+apiKey);
+  console.log(db+collection+apiKey);
   $.ajax({
-    url:db+"/collections/usernames"+apiKey,
+    url:db+collection+apiKey,
     method: 'PUT',
     data: data,
     contentType: 'application/json',
@@ -141,4 +145,5 @@ var getUsers = function(){
   var existingUsers = JSON.parse(users.responseText);
   console.log(existingUsers.username.userArray);
   userArray = existingUsers.username.userArray;
+  console.log(userArray);
 }

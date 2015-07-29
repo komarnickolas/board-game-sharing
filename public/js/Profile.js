@@ -28,6 +28,10 @@ $(document).ready(function(){
     console.log(userArray[number]);
     $(render(newGameTitle, newGameStatus, newGameCondition, newGameNumberOfPlayers)).insertBefore("#addagame");
     window.saveUsers();
+    $('#gamesTitle').val("");
+    $('#gamesNumberOfPlayers').val("");
+    $('#gamesStatus').val("");
+    $('#gamesCondition').val("");
   });
   function render(t,s,c,n){
     return "<tr><td>"+t+"</td><td>"+n+"</td><td>"+s+"</td><td>"+c+"</td></tr>";
