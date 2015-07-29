@@ -17,7 +17,47 @@
 
 /* Social Media */
 
-html {
+@import url('//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css');
+
+a, a:hover {
+  text-decoration: none;
+}
+
+.socialbtns, .socialbtns ul, .socialbtns li {
+  margin: 0;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.socialbtns li {
+    list-style: none outside none;
+    display: inline-block;
+}
+
+.socialbtns .fa {
+  width: 40px;
+    height: 40px;
+  color: #035f70;
+  background-color: #69BCCC;
+  border: 1px solid #035f70;
+  padding-top: 12px;
+  border-radius: 22px;
+  -moz-border-radius: 22px;
+  -webkit-border-radius: 22px;
+  -o-border-radius: 22px;
+}
+
+.socialbtns .fa:hover {
+  transition: all 400ms ease-in-out;
+  color: #69bccc;
+  background-color: #035f70;
+  border: 1px solid #69bccc;
+}
+
+
+/*This line down is work prior to James' social media icons*/
+
+/*html {
   background-color:#222;
   font-family: helvetica;
 }
@@ -35,8 +75,7 @@ html {
   text-align:center;
   color:#356245;
   padding-bottom:25px;
-
-}
+}*/
 
 /* ---------- Line ---------- */
 

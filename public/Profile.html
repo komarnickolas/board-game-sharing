@@ -7,7 +7,7 @@
     <link href='css/login.css' type='text/css' rel='stylesheet'></link>
     <link rel="shortcut icon" type="image/png" href="css/resources/dice.png"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-    <title>Who's board?</title>
+    <title>Who's Board?</title>
   </head>
   <body>
     <div id='nav'>
@@ -43,16 +43,44 @@
       		<li></li>
       		<li></li>
       		<li></li>
+          <li></li>
+      		<li></li>
+      		<li></li>
+      		<li></li>
+      		<li></li>
+      		<li></li>
+      		<li></li>
+      		<li></li>
+      		<li></li>
+      		<li></li>
       	</ul>
       </div>
     </div>
-
+    <button id='addGameBtn'>ADD A GAME</button>
     <div id='addGame'>
-      <h3>Add Game to Library</h3>
-      <input id='gameTitle' placeholder = 'Game Title'></input>
-      <input id='numPlayers' placeholder = 'Number of Players'></input>
-      <button id='addGame'>Submit</button>
+      <form id='addGameForm'>
+        <table id = "table">
+        <thead id='tableHead'>
+          <tr id='tableHeaders'>
+            <th>Title</th>
+            <th>Number of Players</th>
+            <th>Status</th>
+            <th>Condition</th>
+          </tr>
+        </thead>
+        <tbody id = 'tablebody'>
+          <tr id='addagame'>
+            <td><input id='gamesTitle' placeholder="title"></input></td>
+            <td><input id='gamesNumberOfPlayers' placeholder="number of players"></input></td>
+            <td><input id='gamesStatus' placeholder="status"></input></td>
+            <td><input id='gamesCondition' placeholder="condition"></input></td>
+          </tr>
+        </tbody>
+      </table>
+      <button type='submit' id='submitGamebtn'>Submit game</button>
+    </form>
+    </div>
     <script src='js/database.js'></script>
-    <script src='Profile.js'></script>
+    <script src='js/Profile.js'></script>
   </body>
 </html>
