@@ -16,8 +16,8 @@ $(document).ready(function(){
   }
   $('#searchbtn').click(function(e){
     e.preventDefault();
-    var query = $('#searchinput').val();
-    $('#searchinput').val("");
+    var query = $('#title').val();
+    $('#title').val("");
     for(var z = 0; z<tableSize; z++){
       $('#newrow'+z).remove();
     }
