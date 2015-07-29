@@ -37,4 +37,4 @@
 - BUBLES on login!
 - login styled
 - Stylesheets split up
-
+- Social Media Links currently on About page inspired by  http://codepen.io/vpdemo/pen/dPdymj
