@@ -37,4 +37,4 @@
 - BUBLES on login!
 - login styled
 - Stylesheets split up
-
+- Added Profile for users to add games into library
