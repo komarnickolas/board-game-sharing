@@ -1,5 +1,11 @@
-var forumsStatus = undefined;
+var forumsStatus = [];
+var forumCollection ="/collections/forums/55b84bdbe4b0230ce90fe0d7";
 $(document).ready(function(){
+  $.ajax({
+    url: db + forumCollection+ apiKey,
+    type:'GET',
+    success: console.log("Connected to database")
+  });
   $('Username').hide();
   $('#Loginbtn').click(function(){
     console.log('clicked');
@@ -28,5 +34,17 @@ $(document).ready(function(){
       var comment = document.getElementById('comment').value;
       var newcomment = new Feedback(user, comment);
       newcomment.display();
+      forumsStatus.push(newcomment);
+      console.log(forumsStatus);
+      var data = JSON.stringify({forums: {forumsStatus}});
+      console.log(data);
+      console.log(db+collection+apiKey);
+      $.ajax({
+        url:db+forumCollection+apiKey,
+        method: 'PUT',
+        data: data,
+        contentType: 'application/json',
+        success: console.log('success')
+      });
   });
 });
