@@ -75,7 +75,7 @@
             <td><input id='gamesTitle' placeholder="title"></input></td>
             <td><!-- <input id='gamesNumberOfPlayers' placeholder="number of players"> -->
               <!-- <form name='minPLayer'> -->
-                <select name='minDrop'>
+                <select id='minDrop'>
                   <option value='1'>Minimun 1</option>
                   <option value='2'>2</option>
                   <option value='3'>3</option>
@@ -86,7 +86,7 @@
                   <option value='8'>8+</option>
                 </select>
               <!-- </form> -->
-                <select name='maxDrop'>
+                <select id='maxDrop'>
                   <option value='1'>Maximum 1</option>
                   <option value='2'>2</option>
                   <option value='3'>3</option>
@@ -98,22 +98,18 @@
                 </select>
             </input></td>
             <td><!-- <input id='gamesStatus' placeholder="status"> -->
-              <select name='conditionDrop'>
+              <select id='statusDrop'>
                   <option value='checkedIn'>Checked In</option>
                   <option value='checkedOut'>Checked Out</option>
             </input></td>
             <td><!-- <input id='gamesCondition' placeholder="condition"> -->
-              <select name='conditionDrop'>
-                  <option value='1'>1 (worst)</option>
-                  <option value='2'>2</option>
-                  <option value='3'>3</option>
+                <select id='conditionDrop'>
+                  <option value='5'>5 (best)</option>
                   <option value='4'>4</option>
-                  <option value='5'>5</option>
-                  <option value='6'>6</option>
-                  <option value='7'>7</option>
-                  <option value='8'>8</option>
-                  <option value='9'>9</option>
-                  <option value='10'>10 (best)</option>
+                  <option value='3'>3</option>
+                  <option value='2'>2</option>
+                  <option value='1'>1 (worst)</option>
+                  <option value='incomplete'>Incomplete</option>
                 </select>
 
             </input></td>
