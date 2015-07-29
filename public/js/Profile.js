@@ -11,8 +11,8 @@ $(document).ready(function(){
     console.log('adding game');
     var newGameTitle = $('#gamesTitle').val();
     var newGameNumberOfPlayers = $('#gamesNumberOfPlayers').val();
-    var newGameStatus = $('#gamesStatus').val();
-    var newGameCondition = $('#gamesCondition').val();
+    var newGameStatus = $('#statusDrop').val();
+    var newGameCondition = $('#conditionDrop').val();
     console.log(newGameTitle, newGameNumberOfPlayers, newGameStatus, newGameCondition);
     var userProfileToEdit = undefined;
     var number = -1;
