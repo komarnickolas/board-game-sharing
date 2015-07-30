@@ -41,5 +41,13 @@ $(document).ready(function(){
     $('#newrow'+y).append('<td>'+userArray[x].games[y].gameCondition+'</td>');
     $('#newrow'+y).append('<td>'+userArray[x].games[y].gameStatus+'</td>');
     $('#newrow'+y).append('<td>'+userArray[x].username+'</td>');
+    $('#newrow'+y).append('<td><button name="'+y+'">I want this game</button></td>');
   }
+  $('button').click(function(e){
+    e.preventDefault();
+    var btnpressed = $(this).attr('name');
+    console.log($(this).parent());
+    var rowSelected = $(this).parent().find('#'+btnpressed);
+    console.log(rowSelected);
+  });
 });
