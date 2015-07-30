@@ -10,19 +10,11 @@ $(document).ready(function(){
     this.name = name;
     this.comments = comments;
   };
-  Feedback.prototype.display = function() {
-    var table = document.getElementById('table');
-    var row = document.createElement('tr');
-
-    var td = document.createElement('td');
-    td.innerHTML = this.name;
-    row.appendChild(td);
-    table.appendChild(row);
-
-    var comm = document.createElement('td');
-    comm.innerHTML = this.comments;
-    row.appendChild(comm);
-    table.appendChild(row);
+  Feedback.prototype.display = function(spot) {
+    $('#content').append('<tr id="newrow'+spot+'"></tr>');
+    $('#newrow'+spot).append('<td>'+this.name+'</td>');
+    $('#newrow'+spot).append('<td>'+this.comments+'</td>');
+    $('#newrow'+spot).append('<button id="del'+spot+'"> <image src="css/resources/minus.png"></image></button>');
   };
   getForumsStatus();
   $('Username').hide();
@@ -31,12 +23,11 @@ $(document).ready(function(){
     window.location.href = "#openModal";
   });
   $('#btn').click(function(){
-      var user = document.getElementById('user').value;
-      var comment = document.getElementById('comment').value;
-      var newcomment = new Feedback(user, comment);
+      var newcomment = new Feedback($('#user').val(), $('#comment').val());
       newcomment.display();
       forumsStatus.push(newcomment);
       console.log(forumsStatus);
+
       var data = JSON.stringify({forums: {forumsStatus}});
       console.log(data);
       console.log(db+collection+apiKey);
@@ -45,13 +36,13 @@ $(document).ready(function(){
         method: 'PUT',
         data: data,
         contentType: 'application/json',
-        success: console.log('success')
+        success: console.log('successful data save')
       });
-  });
-  $('#del').click(function(){
-    document.getElementById('table').deleteRow(-1);
-  });
 
+  });
+  $('button').click(function(){
+    $('#del'+spot).parent().remove();
+  });
   function getForumsStatus(){
     var fs = $.ajax({
       url: db + forumCollection + apiKey,
@@ -61,17 +52,20 @@ $(document).ready(function(){
     	dataType: 'json',
     	success: function(data)
       	{
+          dataReceived(data);
           console.log("Success");
+          console.dir(data);
       	}
     });
-    console.log(fs.responseText);
-    var existingForums = JSON.parse(fs.responseText);
-    console.log(existingForums.forums.forumsStatus);
-    forumsStatus = existingForums.forums.forumsStatus;
-    console.log(forumsStatus);
+    function dataReceived(data) {
+    console.dir(data);
+    // var existingForums = JSON.parse(fs.responseText);
+    // console.log(existingForums.forums.forumsStatus);
+    forumsStatus = data.forums.forumsStatus;
     for(var x = 0; x<forumsStatus.length;x++){
       var popForum = new Feedback(forumsStatus[x].name, forumsStatus[x].comments);
-      popForum.display();
+      popForum.display(x);
+      }
     }
   }
 });
