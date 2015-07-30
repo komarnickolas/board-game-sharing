@@ -6,14 +6,16 @@ $(document).ready(function(){
     type:'GET',
     success: console.log("Connected to database")
   });
-  var Feedback = function(name, comments) {
+  var Feedback = function(name, comments, sender) {
     this.name = name;
     this.comments = comments;
+    this.sender = sender;
   };
   Feedback.prototype.display = function(spot) {
     $('#content').append('<tr id="newrow'+spot+'"></tr>');
     $('#newrow'+spot).append('<td id="name'+spot+'">'+this.name+'</td>');
     $('#newrow'+spot).append('<td>'+this.comments+'</td>');
+    $('#newrow'+spot).append('<td>'+this.sender+'</td>');
     $('#newrow'+spot).append('<button id="'+spot+'"> <image src="css/resources/minus.png"></image></button>');
   };
   getForumsStatus();
@@ -23,7 +25,7 @@ $(document).ready(function(){
     window.location.href = "#openModal";
   });
   $('#btn').click(function(){
-      var newcomment = new Feedback($('#user').val(), $('#comment').val());
+      var newcomment = new Feedback($('#user').val(), $('#comment').val(), $('#sender').val());
       newcomment.display();
       forumsStatus.push(newcomment);
       console.log(forumsStatus);
@@ -85,7 +87,7 @@ $(document).ready(function(){
     // console.log(existingForums.forums.forumsStatus);
     forumsStatus = data.forums.forumsStatus;
     for(var x = 0; x<forumsStatus.length;x++){
-      var popForum = new Feedback(forumsStatus[x].name, forumsStatus[x].comments);
+      var popForum = new Feedback(forumsStatus[x].name, forumsStatus[x].comments,forumsStatus[x].sender);
       popForum.display(x);
       }
     }
