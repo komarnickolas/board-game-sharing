@@ -20,6 +20,7 @@
             <li id='About'><a href='About.html'>About</a></li>
             <li id='Login'><button id='Loginbtn' style='display: none'>Login</button><button id='Logoutbtn' style='display: none'>Logout</button></li>
             <li id='Username'><a href='Profile.html' id='UsernameLink'></a></li>
+            <li id='ping'></li>
         </ul>
       </div>
 
@@ -59,7 +60,6 @@
         </div>
       </div>
     <div id='addGame'>
-      <form id='addGameForm'>
         <table id = "table">
         <thead id='tableHead'>
           <tr id='tableHeaders'>
@@ -69,10 +69,15 @@
             <th>Condition</th>
           </tr>
         </thead>
-        <tbody id = 'tablebody'>
+        <tbody id = 'tablebody'></tbody>
+        <tfoot>
           <tr id='addagame'>
-            <td><input id='gamesTitle' placeholder="title"></input></td>
-            <td><!-- <input id='gamesNumberOfPlayers' placeholder="number of players"> -->
+            <td class='addGame'>
+              <form>
+              <input id='gamesTitle' placeholder="title"></input>
+              </form>
+            </td>
+            <td class='addGame'><!-- <input id='gamesNumberOfPlayers' placeholder="number of players"> -->
               <!-- <form name='minPLayer'> -->
                 <select id='minDrop'>
                   <option value='1'>Minimun 1</option>
@@ -95,14 +100,14 @@
                   <option value='7'>7</option>
                   <option value='8'>8+</option>
                 </select>
-              <!-- </input> -->
-            </td>
-            <td><!-- <input id='gamesStatus' placeholder="status"> -->
+          </td>
+            <td class='addGame'><!-- <input id='gamesStatus' placeholder="status"> -->
               <select id='statusDrop'>
                   <option value='checkedIn'>Checked In</option>
                   <option value='checkedOut'>Checked Out</option>
-            </input></td>
-            <td><!-- <input id='gamesCondition' placeholder="condition"> -->
+                </select>
+            </td>
+            <td class='addGame'><!-- <input id='gamesCondition' placeholder="condition"> -->
                 <select id='conditionDrop'>
                   <option value='5'>5 (best)</option>
                   <option value='4'>4</option>
@@ -111,12 +116,13 @@
                   <option value='1'>1 (worst)</option>
                   <option value='incomplete'>Incomplete</option>
                 </select>
-            </input></td>
+            </td>
           </tr>
-        </tbody>
+        </tfoot>
       </table>
+    <form>
       <button type='submit' id='submitGamebtn'>Submit game</button>
-      <button id='editGamebtn'>Edit game</button>
+      <!-- <button id='editGamebtn'>Edit games</button> -->
       <button id="stopEditing">Stop Editing</button>
     </form>
     </div>

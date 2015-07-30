@@ -6,6 +6,7 @@ $(document).ready(function(){
   var retrievedSearchQuery = localStorage.getItem('SearchQuery');
   if(retrievedSearchQuery != null){
     console.log(retrievedSearchQuery);
+    $('#title').val(retrievedSearchQuery);
   }
   var tableSize = 0;
   for(var x = 0; x<userArray.length; x++){
@@ -40,6 +41,24 @@ $(document).ready(function(){
     $('#newrow'+y).append('<td>'+userArray[x].games[y].numberOfPlayers+'</td>');
     $('#newrow'+y).append('<td>'+userArray[x].games[y].gameCondition+'</td>');
     $('#newrow'+y).append('<td>'+userArray[x].games[y].gameStatus+'</td>');
-    $('#newrow'+y).append('<td>'+userArray[x].username+'</td>');
+    $('#newrow'+y).append('<td id="userSelected'+y+'">'+userArray[x].username+'</td>');
+    $('#newrow'+y).append('<td><button name="'+y+'">I want this game</button></td>');
   }
+  $('button').click(function(e){
+    e.preventDefault();
+    var btnpressed = $(this).attr('name');
+    console.log(btnpressed);
+    var rowSelected = $('#'+btnpressed).text();
+    console.log(rowSelected);
+    var userSelected = $('#userSelected'+btnpressed).text();
+    console.log(userSelected);
+    for(var x = 0; x<userArray.length; x++){
+      if(userSelected === userArray[x].username){
+        userArray[x].pinged[0] = true;
+        userArray[x].pinged[1] += 1;
+        console.log(userArray[x].pinged);
+        saveUsers();
+      }
+    }
+  });
 });
