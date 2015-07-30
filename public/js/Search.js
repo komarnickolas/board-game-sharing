@@ -51,12 +51,13 @@ $(document).ready(function(){
     var rowSelected = $('#'+btnpressed).text();
     console.log(rowSelected);
     var userSelected = $('#userSelected'+btnpressed).text();
-    console.log(userSelected);s
+    console.log(userSelected);
     for(var x = 0; x<userArray.length; x++){
       if(userSelected === userArray[x].username){
         userArray[x].pinged[0] = true;
         userArray[x].pinged[1] += 1;
         console.log(userArray[x].pinged);
+        saveUsers();
       }
     }
   });
