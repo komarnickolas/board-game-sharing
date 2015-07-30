@@ -12,70 +12,70 @@
     <title>Who's Board?</title>
   </head>
   <body>
-
-    <div id='nav'>
-      <ul>
-          <li id='Home'><a href='index.html'>Home</a></li>
-          <li id='Search'><a href='Search.html'>Search</a></li>
-          <li id='Forums'><a href='Forums.html'>Forums</a></li>
-          <li id='About'><a href='About.html'>About</a></li>
-          <li id='Login'><button id='Loginbtn' style='display: none'>Login</button><button id='Logoutbtn' style='display: none'>Logout</button></li>
-          <li id='Username'><a href='Profile.html' id='UsernameLink'></a></li>
-      </ul>
-    </div>
-
-    <div id="openModal" class="modalDialog">
-
-      <div class="wrapper">
-      	<div class="container">
-          <a href="#close" title="Close" class="close">X</a>
-      		<h1>Login/Register</h1>
-      		<form class="form">
-      			<input placeholder="Username" id='username'></input>
-      			<input type="password" placeholder="Password" id='password'></input>
-      			<button type="submit" id="login-button">Login</button>
-      		</form>
-      	</div>
-      	<ul class="bg-bubbles">
-      		<li></li>
-      		<li></li>
-      		<li></li>
-      		<li></li>
-      		<li></li>
-      		<li></li>
-      		<li></li>
-      		<li></li>
-      		<li></li>
-      		<li></li>
-          <li></li>
-      		<li></li>
-      		<li></li>
-      		<li></li>
-      		<li></li>
-      		<li></li>
-      		<li></li>
-      		<li></li>
-      		<li></li>
-      		<li></li>
-      	</ul>
+    <div class="page-wrap">
+      <div id='nav'>
+        <ul>
+            <li id='Home'><a href='index.html'>Home</a></li>
+            <li id='Search'><a href='Search.html'>Search</a></li>
+            <li id='Forums'><a href='Forums.html'>Forums</a></li>
+            <li id='About'><a href='About.html'>About</a></li>
+            <li id='Login'><button id='Loginbtn' style='display: none'>Login</button><button id='Logoutbtn' style='display: none'>Logout</button></li>
+            <li id='Username'><a href='Profile.html' id='UsernameLink'></a></li>
+        </ul>
       </div>
-    </div>
 
-  <center>
-    <h3><center>Board Game Library</center></h3>
-    <div id='lowerSearch'>
-      <form id='searchForm'>
-        <h3><center>Search Library By</center></h3>
-        <input placeholder = 'Game Title?' id='title'></input>
-        <input placeholder = 'How Many Players?' id='numberOfPlayers'></input>
-        <input placeholder = 'Condition?' id='status'></input>
-        <input placeholder = 'Status?' id='status'></input>
-        <button id='searchbtn'>Search</button>
-      </form>
-    </div>
-  </center>
+      <div id="openModal" class="modalDialog">
 
-    <div id='fields'>
+        <div class="wrapper">
+        	<div class="container">
+            <a href="#close" title="Close" class="close">X</a>
+        		<h1>Login/Register</h1>
+        		<form class="form">
+        			<input placeholder="Username" id='username'></input>
+        			<input type="password" placeholder="Password" id='password'></input>
+        			<button type="submit" id="login-button">Login</button>
+        		</form>
+        	</div>
+        	<ul class="bg-bubbles">
+        		<li></li>
+        		<li></li>
+        		<li></li>
+        		<li></li>
+        		<li></li>
+        		<li></li>
+        		<li></li>
+        		<li></li>
+        		<li></li>
+        		<li></li>
+            <li></li>
+        		<li></li>
+        		<li></li>
+        		<li></li>
+        		<li></li>
+        		<li></li>
+        		<li></li>
+        		<li></li>
+        		<li></li>
+        		<li></li>
+        	</ul>
+        </div>
+      </div>
+
+      <center>
+        <h3><center>Board Game Library</center></h3>
+        <div id='lowerSearch'>
+          <form id='searchForm'>
+            <h3><center>Search Library By</center></h3>
+            <input placeholder = 'Game Title?' id='title'></input>
+            <input placeholder = 'How Many Players?' id='numberOfPlayers'></input>
+            <input placeholder = 'Condition?' id='status'></input>
+            <input placeholder = 'Status?' id='status'></input>
+            <button id='searchbtn'>Search</button>
+          </form>
+        </div>
+      </center>
+
+      <div id='fields'>
         <table id='searchResults'border=3px #035f70>
           <thead id='searchTR'>
             <tr>
@@ -84,13 +84,13 @@
               <th id='tableCondtion'>Game Condition</th>
               <th id='tableStatus'>Current Status</th>
               <th id='owner'>Owner</th>
-            <tr>
+            </tr>
           </thead>
           <tbody id='content'>
           </tbody>
         </table>
       </div>
-
+    </div>
     <!--  Social Media -->
 
     <footer id='footer'>
