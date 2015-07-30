@@ -25,3 +25,6 @@
 .deletebutton {
   background: #228fa2;
 }
+#user, #comment{
+  float: left;
+}
