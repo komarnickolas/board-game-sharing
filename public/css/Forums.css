@@ -18,13 +18,11 @@
 #sender1 {
   color: #53E3A6;
 }
-#del {
-  margin-left: 41%;
-  margin-top: 5%;
-}
-.deletebutton {
-  background: #228fa2;
-}
 #user, #comment, #sender1{
   float: left;
+}
+table button {
+  background-color: #228fa2;
+  margin-left: 25%;
+  margin-right: 25%;
 }
