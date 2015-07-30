@@ -25,7 +25,7 @@ $(document).ready(function(){
     window.location.href = "#openModal";
   });
   $('#btn').click(function(){
-      var newcomment = new Feedback($('#user').val(), $('#comment').val(), $('#sender').val());
+      var newcomment = new Feedback($('#user').val(), $('#comment').val(), $('#sender1').val());
       newcomment.display();
       forumsStatus.push(newcomment);
       console.log(forumsStatus);
