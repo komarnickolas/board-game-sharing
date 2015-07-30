@@ -12,9 +12,9 @@ $(document).ready(function(){
   };
   Feedback.prototype.display = function(spot) {
     $('#content').append('<tr id="newrow'+spot+'"></tr>');
-    $('#newrow'+spot).append('<td>'+this.name+'</td>');
+    $('#newrow'+spot).append('<td id="name'+spot+'">'+this.name+'</td>');
     $('#newrow'+spot).append('<td>'+this.comments+'</td>');
-    $('#newrow'+spot).append('<button id="del'+spot+'"> <image src="css/resources/minus.png"></image></button>');
+    $('#newrow'+spot).append('<button id="'+spot+'"> <image src="css/resources/minus.png"></image></button>');
   };
   getForumsStatus();
   $('Username').hide();
@@ -41,7 +41,16 @@ $(document).ready(function(){
 
   });
   $('button').click(function(){
-    $('#del'+spot).parent().remove();
+    console.log('clicked');
+    var btnpressed = $(this).attr('id');
+    console.log(btnpressed);
+    for(var x = 0; x<forumsStatus.length; x++){
+        console.log(forumsStatus[x]);
+      if(forumsStatus[x].name === $('#name'+btnpressed).text()){
+        $(this).parent().remove();
+        break;
+      }
+    }
   });
   function getForumsStatus(){
     var fs = $.ajax({
