@@ -24,7 +24,8 @@ $(document).ready(function(){
     console.log('clicked');
     window.location.href = "#openModal";
   });
-  $('#btn').click(function(){
+  $('#btn').click(function(e){
+      e.preventDefault();
       var newcomment = new Feedback($('#user').val(), $('#comment').val(), $('#sender1').val());
       newcomment.display();
       forumsStatus.push(newcomment);
@@ -47,7 +48,6 @@ $(document).ready(function(){
     var btnpressed = $(this).attr('id');
     console.log(btnpressed);
     for(var x = 0; x<forumsStatus.length; x++){
-        console.log(forumsStatus[x]);
       if(forumsStatus[x].name === $('#name'+btnpressed).text()){
         $(this).parent().remove();
         console.log(forumsStatus[x].name);
