@@ -48,6 +48,19 @@ $(document).ready(function(){
         console.log(forumsStatus[x]);
       if(forumsStatus[x].name === $('#name'+btnpressed).text()){
         $(this).parent().remove();
+        console.log(forumsStatus[x].name);
+        forumsStatus.splice(x,x);
+        console.log(forumsStatus);
+        var data = JSON.stringify({forums: {forumsStatus}});
+        console.log(data);
+        console.log(db+collection+apiKey);
+        $.ajax({
+          url:db+forumCollection+apiKey,
+          method: 'PUT',
+          data: data,
+          contentType: 'application/json',
+          success: console.log('successful data save')
+        });
         break;
       }
     }

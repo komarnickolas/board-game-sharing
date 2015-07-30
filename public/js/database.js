@@ -13,6 +13,7 @@ var game = function(n,s,c,p){
 var db = 'https://api.mongolab.com/api/1/databases/users';
 var collection = "/collections/usernames/55b6862ae4b077bc38f60527";
 var apiKey = '?apiKey=CmxO8Pu1HeEpa6MSJyWa3ceKlKExom1_';
+var loggedInUser = undefined;
 $(document).ready(function(){
   $.ajax({
     url: db + apiKey,
@@ -102,6 +103,7 @@ $(document).ready(function(){
     $('#Logoutbtn').show();
     $('#UsernameLink').html(currentUser);
     userLoggedIn = 'true';
+    loggedInUser = currentUser;
     localStorage.setItem('CurrentUser',currentUser);
     localStorage.setItem('IsUserLoggedIn',userLoggedIn);
     console.log(localStorage.getItem('CurrentUser'));
@@ -126,7 +128,9 @@ var saveUsers = function(){
     method: 'PUT',
     data: data,
     contentType: 'application/json',
-    success: console.log('success')
+    success: function(){
+      console.log('success');
+    }
   });
 }
 var getUsers = function(){
