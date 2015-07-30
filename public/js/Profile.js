@@ -10,12 +10,20 @@ $(document).ready(function(){
         $('#newrow'+y).append('<td>'+userArray[x].games[y].gameStatus+'</td>');
         $('#newrow'+y).append('<td>'+userArray[x].games[y].gameCondition+'</td>');
       }
+      if(userArray[x].pinged[0] === true){
+        $('#ping').append('<l>'+userArray[x].pinged[1]+'</l>');
+      }
     }
   }
   $('#editGamebtn').click(function(e){
     e.preventDefault();
     console.log('clicked');
-
+    $('td').each(function(){
+      if($(this).attr('class') != 'addGame'){
+        var value = $(this).text();
+        $(this).replaceWith('<td><input placeholder="'+value+'"></input></td>');
+      }
+    });
     $('#stopEditing').show();
   });
   $('#stopEditing').click(function(e){
@@ -33,6 +41,16 @@ $(document).ready(function(){
         }
       }
     }
+    $('td').each(function(){
+      if($(this).attr('class') != 'addGame'){
+        var value = $(this).text();
+        if(value === ""){
+          value = $(this).attr('placeholder');
+          console.log(value);
+        }
+        $(this).replaceWith('<td>'+value+'</td>');
+      }
+    });
     $('#stopEditing').hide();
     saveUsers();
   });
