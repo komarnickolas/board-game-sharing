@@ -17,32 +17,52 @@ $(document).ready(function(){
   }
   $('#searchbtn').click(function(e){
     e.preventDefault();
-    var query = $('#title').val();
+    var queryT = $('#title').val();
+    var queryMN = $('#minDrop').val();
+    var queryMX = $('#maxDrop').val();
+    var queryS = $('#statusDrop').val();
+    var queryC = $('#conditionDrop').val();
     $('#title').val("");
+    $('#minDrop').val("minimum 1");
+    $('#maxDrop').val("maximum 1");
+    $('#statusDrop').val("Checked in");
+    $('#conditionDrop').val("5(best)");
     for(var z = 0; z<tableSize; z++){
       $('#newrow'+z).remove();
     }
     for(var x = 0; x<userArray.length; x++){
       for(var y = 0; y<userArray[x].games.length; y++){
-        if(userArray[x].games[y].gameName.toLowerCase() === query.toLowerCase()){
+        if(userArray[x].games[y].gameName.toLowerCase() === queryT.toLowerCase() && queryT != ""){
           addRow(x,y);
           console.log('found');
         }
-        else{
-          $('#newrow'+y).remove();
-          console.log('not found');
+        if(userArray[x].games[y].numberOfPlayers === queryMN+"-"+queryMX){
+          addRow(x,y);
+          console.log('found');
         }
+        if(userArray[x].games[y].gameCondition === queryC){
+          addRow(x,y);
+          console.log('found');
+        }
+        if(userArray[x].games[y].gameStatus === queryS){
+          addRow(x,y);
+          console.log('found');
+        }
+        // else{
+        //   $('#newrow'+y).remove();
+        //   console.log('not found');
+        // }
       }
     }
   });
   function addRow(x,y){
-    $('#content').append('<tr id="newrow'+y+'"></tr>');
-    $('#newrow'+y).append('<td id="'+y+'">'+userArray[x].games[y].gameName+'</td>');
-    $('#newrow'+y).append('<td>'+userArray[x].games[y].numberOfPlayers+'</td>');
-    $('#newrow'+y).append('<td>'+userArray[x].games[y].gameCondition+'</td>');
-    $('#newrow'+y).append('<td>'+userArray[x].games[y].gameStatus+'</td>');
-    $('#newrow'+y).append('<td id="userSelected'+y+'">'+userArray[x].username+'</td>');
-    $('#newrow'+y).append('<td><button name="'+y+'">I want this game</button></td>');
+    $('#content').append('<tr id="newrow'+x+y+'"></tr>');
+    $('#newrow'+x+y).append('<td id="'+y+'">'+userArray[x].games[y].gameName+'</td>');
+    $('#newrow'+x+y).append('<td>'+userArray[x].games[y].numberOfPlayers+'</td>');
+    $('#newrow'+x+y).append('<td>'+userArray[x].games[y].gameCondition+'</td>');
+    $('#newrow'+x+y).append('<td>'+userArray[x].games[y].gameStatus+'</td>');
+    $('#newrow'+x+y).append('<td id="userSelected'+x+'">'+userArray[x].username+'</td>');
+    $('#newrow'+x+y).append('<td><button name="'+x+'">I want this game</button></td>');
   }
   $('button').click(function(e){
     e.preventDefault();
@@ -54,9 +74,9 @@ $(document).ready(function(){
     console.log(userSelected);
     for(var x = 0; x<userArray.length; x++){
       if(userSelected === userArray[x].username){
-        userArray[x].pinged[0] = true;
-        userArray[x].pinged[1] += 1;
-        console.log(userArray[x].pinged);
+        userArray[x].pingged[0] = true;
+        userArray[x].pingged[1] += 1;
+        console.log(userArray[x].pingged);
         saveUsers();
       }
     }

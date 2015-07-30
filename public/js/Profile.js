@@ -11,8 +11,8 @@ $(document).ready(function(){
         $('#newrow'+y).append('<td id="condition'+y+'">'+userArray[x].games[y].gameCondition+'</td>');
         // $('#newrow'+y).append('<button id="'+y+'"> <image src="css/resources/minus.png"></image></button>');
       }
-      if(userArray[x].pinged[0] === true){
-        $('#ping').append('<l>'+userArray[x].pinged[1]+'</l>');
+      if(userArray[x].pingged[0] === true){
+        $('#ping').append('<l>'+userArray[x].pingged[1]+'</l>');
       }
     }
   }
@@ -33,7 +33,7 @@ $(document).ready(function(){
   //     saveUsers();
   //   }
   // });
-  var number = -1;
+  var number = 0;
   $('#submitGamebtn').click(function(e){
     e.preventDefault();
     console.log('adding game');
@@ -45,9 +45,7 @@ $(document).ready(function(){
     console.log(newGameTitle, newMinGameNumberOfPlayers +"-"+ newMaxGameNumberOfPlayers, newGameStatus, newGameCondition);
     var userProfileToEdit = undefined;
     for(var x = 0; x<userArray.length;x++){
-      var boxValue = $('#UsernameLink').text();
-      var selectedUser = ""+userArray[x].username;
-      if(selectedUser.toLowerCase() === boxValue.toLowerCase()){
+      if(userArray[x].username != loggedInUser){
         number++;
       }
     }
