@@ -16,6 +16,11 @@ $(document).ready(function(){
     $('#table').attr('contenteditable', '');
     $('#addGameForm').append('<button id="stopEditing">Stop Editing</button>');
   });
+  $('#stopEditin').click(function(){
+    for(var x = 0; x<userArray.length; x++){
+
+    }
+  });
   $('#submitGamebtn').click(function(e){
     e.preventDefault();
     console.log('adding game');
@@ -47,18 +52,3 @@ $(document).ready(function(){
     return "<tr><td>"+t+"</td><td>"+n+"</td><td>"+s+"</td><td>"+c+"</td></tr>";
   }
 });
-(function($) {
-    $.fn.changeElementType = function(newType) {
-        this.each(function() {
-            var attrs = {};
-
-            $.each(this.attributes, function(idx, attr) {
-               attrs[attr.nodeName] = attr.nodeValue;
-            });
-
-            $(this).replaceWith(function() {
-                return $("<" + newType + "/>", attrs).append($(this).contents());
-            });
-	});
-    };
-})(jQuery);
