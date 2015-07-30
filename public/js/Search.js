@@ -46,8 +46,7 @@ $(document).ready(function(){
   $('button').click(function(e){
     e.preventDefault();
     var btnpressed = $(this).attr('name');
-    console.log($(this).parent());
-    var rowSelected = $(this).parent().find('#'+btnpressed);
+    var rowSelected = $('#'+btnpressed).text();
     console.log(rowSelected);
   });
 });
