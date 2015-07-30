@@ -2,6 +2,7 @@ var userArray = [];
 var user = function(u,p){
   this.username = u;
   this.password = p;
+  this.pingged = [false, 0];
   this.games = [];
 }
 var game = function(n,s,c,p){
