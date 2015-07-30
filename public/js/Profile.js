@@ -14,7 +14,9 @@ $(document).ready(function(){
   }
   $('#editGamebtn').click(function(e){
     e.preventDefault();
-    $('#table').attr('contenteditable', '');
+    $('#tableBody').each("td"){
+      console.log($(this).text());
+    }
     $('#stopEditing').show();
   });
   $('#stopEditing').click(function(e){
