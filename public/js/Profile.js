@@ -1,5 +1,6 @@
 $(document).ready(function(){
   $('#Loginbtn').hide();
+  $('#stopEditing').hide();
   for(var x = 0;x<userArray.length; x++){
     if(userArray[x].username === loggedInUser){
       for(var y = 0; y<userArray[x].games.length; y++){
@@ -14,12 +15,25 @@ $(document).ready(function(){
   $('#editGamebtn').click(function(e){
     e.preventDefault();
     $('#table').attr('contenteditable', '');
-    $('#addGameForm').append('<button id="stopEditing">Stop Editing</button>');
+    $('#stopEditing').show();
   });
-  $('#stopEditin').click(function(){
+  $('#stopEditing').click(function(e){
+    e.preventDefault();
     for(var x = 0; x<userArray.length; x++){
-
+      if(userArray[x].username === loggedInUser){
+        for(var y = 0; y<userArray[x].games.length; y++){
+          if(userArray[x].games[y].gameName === "" || userArray[x].games[y].gameName === "undefined"){
+            console.log("blank found");
+            userArray[x].games.splice(y,y);
+          }
+          else{
+            console.log("blank not found");
+          }
+        }
+      }
     }
+    $('#stopEditing').hide();
+    saveUsers();
   });
   $('#submitGamebtn').click(function(e){
     e.preventDefault();

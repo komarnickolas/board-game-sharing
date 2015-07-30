@@ -128,7 +128,9 @@ var saveUsers = function(){
     method: 'PUT',
     data: data,
     contentType: 'application/json',
-    success: console.log('success')
+    success: function(){
+      console.log('success');
+    }
   });
 }
 var getUsers = function(){
