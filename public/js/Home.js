@@ -8,6 +8,7 @@ $(document).ready(function(){
     var searchQuery = $('#inputbox').val();
     console.log(searchQuery);
     localStorage.setItem('SearchQuery',searchQuery);
+    window.location.href="Search.html";
   });
 });
 $('#searchbtn').click(function(e){

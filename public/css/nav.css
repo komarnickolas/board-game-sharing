@@ -295,3 +295,7 @@
 #Username{
   float:right;
 }
+#ping{
+  float: right;
+  color: #ff0000;
+}

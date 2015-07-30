@@ -2,13 +2,15 @@ var userArray = [];
 var user = function(u,p){
   this.username = u;
   this.password = p;
+  this.pingged = [false, 0];
   this.games = [];
 }
-var game = function(n,s,c,p){
+var game = function(n,s,c,p,i){
   this.gameName = n;
   this.gameStatus = s;
   this.gameCondition = c;
   this.numberOfPlayers = p;
+  this.gameId = i;
 }
 var db = 'https://api.mongolab.com/api/1/databases/users';
 var collection = "/collections/usernames/55b6862ae4b077bc38f60527";
