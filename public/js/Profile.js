@@ -43,12 +43,22 @@ $(document).ready(function(){
     }
     $('td').each(function(){
       if($(this).attr('class') != 'addGame'){
-        var value = $(this).text();
+        var value = $(this).find('input').val();
         if(value === ""){
           value = $(this).find('input').attr('placeholder');
           console.log(value);
         }
         $(this).replaceWith('<td>'+value+'</td>');
+        for(var x = 0; x<userArray.length; x++){
+          if(userArray[x].username === loggedInUser){
+            for(var y = 0; y<userArray[x].games.length; y++){
+              if(userArray[x].games[y].gameName === value){
+                userArray[x].games[y].gameName = value;
+                console.log(userArray[x].games[y].gameName);
+              }
+            }
+          }
+        }
       }
     });
     $('#stopEditing').hide();
