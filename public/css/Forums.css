@@ -26,3 +26,7 @@ table button {
   margin-left: 25%;
   margin-right: 25%;
 }
+tr, td, th {
+  outline: thin solid #035f70;
+  text-align: center;
+}
