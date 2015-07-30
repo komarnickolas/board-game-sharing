@@ -15,7 +15,7 @@
 #comment {
   color: #53E3A6;
 }
-#sender {
+#sender1 {
   color: #53E3A6;
 }
 #del {
@@ -25,6 +25,6 @@
 .deletebutton {
   background: #228fa2;
 }
-#user, #comment{
+#user, #comment, #sender1{
   float: left;
 }
