@@ -21,6 +21,15 @@ td{
   font-size: 15px;
   text-align: center;
 }
+tbody tr:nth-child(odd) {
+   background-color: #40A2B4 ;
+}
+#gamesTitle{
+  margin-top: 10px;
+  border-radius:5px;
+  margin-right: 5px;
+  margin-left: 5px;
+}
 #addGame{
   margin-bottom:10%;
 }
@@ -50,6 +59,8 @@ td{
   width: 45%;
   outline: 0;
   font-size:16px;
+  margin-left: 5px;
+  margin-right: 5px;
 
   /*background: transparent;*/
   vertical-align: middle;
