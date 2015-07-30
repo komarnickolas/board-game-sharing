@@ -64,3 +64,40 @@ h3{
   height: 50px;
   text-align: center
 }
+
+#statusDrop, #conditionDrop{
+ /*border-radius: none;
+  box-shadow: none;
+  border: none;*/
+  margin-bottom: 10px;
+  font-weight: 300;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  color: white;
+  background: rgba(255, 255, 255, 0.2);
+  height: 50px;
+  width: 15%;
+  outline: 0;
+  font-size:16px;
+
+  /*background: transparent;*/
+  vertical-align: middle;
+  transition: color .2s ease-in-out, opacity 2s ease-in-out;
+}
+#minDrop, #maxDrop{
+  margin-bottom: 10px;
+ font-weight: 300;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  color: white;
+  background: rgba(255, 255, 255, 0.2);
+  height: 50px;
+  width: 11%;
+  outline: 0;
+  font-size:16px;
+
+  /*background: transparent;*/
+  vertical-align: middle;
+  transition: color .2s ease-in-out, opacity 2s ease-in-out;
+}
+#searchbtn {
+  margin-bottom: 10px;
+}
