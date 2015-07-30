@@ -14,6 +14,7 @@ $(document).ready(function(){
   $('#editGamebtn').click(function(e){
     e.preventDefault();
     $('#table').attr('contenteditable', '');
+    $('#addGameForm').append('<button id="stopEditing">Stop Editing</button>');
   });
   $('#submitGamebtn').click(function(e){
     e.preventDefault();

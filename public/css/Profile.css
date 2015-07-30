@@ -21,6 +21,9 @@ td{
   font-size: 15px;
   text-align: center;
 }
+#addGame{
+  margin-bottom:10%;
+}
 #statusDrop, #conditionDrop{
  /*border-radius: none;
   box-shadow: none;
