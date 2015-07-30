@@ -45,7 +45,7 @@ $(document).ready(function(){
       if($(this).attr('class') != 'addGame'){
         var value = $(this).text();
         if(value === ""){
-          value = $(this).attr('placeholder');
+          value = $(this).find('input').attr('placeholder');
           console.log(value);
         }
         $(this).replaceWith('<td>'+value+'</td>');
