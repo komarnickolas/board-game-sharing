@@ -1,11 +1,16 @@
 $(document).ready(function(){
-  console.log($('#UsernameLink').text());
   $('#Loginbtn').hide();
-  $('#addGame').hide();
-  $('#addGameBtn').click(function(){
-    $(this).fadeOut(1000);
-    $('#addGame').fadeIn(2000);
-  });
+  for(var x = 0;x<userArray.length; x++){
+    if(userArray[x].username === loggedInUser){
+      for(var y = 0; y<userArray[x].games.length; y++){
+        $('<tr id="newrow'+y+'"></tr>').insertBefore('#addagame');
+        $('#newrow'+y).append('<td>'+userArray[x].games[y].gameName+'</td>');
+        $('#newrow'+y).append('<td>'+userArray[x].games[y].numberOfPlayers+'</td>');
+        $('#newrow'+y).append('<td>'+userArray[x].games[y].gameStatus+'</td>');
+        $('#newrow'+y).append('<td>'+userArray[x].games[y].gameCondition+'</td>');
+      }
+    }
+  }
   $('#submitGamebtn').click(function(e){
     e.preventDefault();
     console.log('adding game');
