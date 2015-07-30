@@ -21,10 +21,14 @@
 #user, #comment, #sender1{
   float: left;
 }
+tbody tr:nth-child(odd) {
+   background-color: #40A2B4 ;
+}
 table button {
   background-color: #228fa2;
   margin-left: 25%;
   margin-right: 25%;
+  width: 45%;
 }
 tr, td, th {
   outline: thin solid #035f70;
