@@ -296,5 +296,6 @@
   float:right;
 }
 #ping{
-  float right;
+  float: right;
+  color: #ff0000;
 }
