@@ -1,7 +1,7 @@
 #table {
-  width: 85%;
-  margin-right: 7.5%;
-  margin-left: 7.5%;
+  width: 75%;
+  margin-right: 12.5%;
+  margin-left: 12.5%;
   margin-top: 6%;
   margin-bottom: 10%;
 }
@@ -15,16 +15,14 @@
 #comment {
   color: #53E3A6;
 }
-#sender {
+#sender1 {
   color: #53E3A6;
 }
-#del {
-  margin-left: 41%;
-  margin-top: 5%;
-}
-.deletebutton {
-  background: #228fa2;
-}
-#user, #comment{
+#user, #comment, #sender1{
   float: left;
+}
+table button {
+  background-color: #228fa2;
+  margin-left: 25%;
+  margin-right: 25%;
 }
