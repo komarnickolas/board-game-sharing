@@ -9,7 +9,9 @@ $(document).ready(function(){
     $('#title').val(retrievedSearchQuery);
   }
   var tableSize = 0;
+  var userSize = 0;
   for(var x = 0; x<userArray.length; x++){
+    userSize++;
     for(var y = 0; y<userArray[x].games.length; y++){
       addRow(x,y);
       tableSize++;
@@ -27,31 +29,40 @@ $(document).ready(function(){
     $('#maxDrop').val("maximum 1");
     $('#statusDrop').val("Checked in");
     $('#conditionDrop').val("5(best)");
-    for(var z = 0; z<tableSize; z++){
-      $('#newrow'+z).remove();
+    for(var z = 0; z<userSize; z++){
+      console.log(z);
+      for(var a = 0; a<tableSize; a++){
+        console.log(a);
+      $('#newrow'+z+a).remove();
+      }
     }
     for(var x = 0; x<userArray.length; x++){
       for(var y = 0; y<userArray[x].games.length; y++){
-        if(userArray[x].games[y].gameName.toLowerCase() === queryT.toLowerCase() && queryT != ""){
-          addRow(x,y);
-          console.log('found');
+        if(queryT != ""){
+          if(userArray[x].games[y].gameName.toLowerCase() === queryT.toLowerCase()){
+            addRow(x,y);
+          }
+          else{
+              $('#newrow'+x+y).remove();
+          }
         }
-        if(userArray[x].games[y].numberOfPlayers === queryMN+"-"+queryMX){
-          addRow(x,y);
-          console.log('found');
+        else if (queryMN+"-"+queryMX != '1-1'){
+          if(userArray[x].games[y].numberOfPlayers === queryMN+"-"+queryMX){
+            addRow(x,y);
+          }
+          else{
+              $('#newrow'+x+y).remove();
+          }
         }
-        if(userArray[x].games[y].gameCondition === queryC){
-          addRow(x,y);
-          console.log('found');
+        else{
+          if(userArray[x].games[y].gameStatus === queryS){
+            console.log(userArray[x].games[y].gameStatus);
+            addRow(x,y);
+          }
+          else{
+              $('#newrow'+x+y).remove();
+          }
         }
-        if(userArray[x].games[y].gameStatus === queryS){
-          addRow(x,y);
-          console.log('found');
-        }
-        // else{
-        //   $('#newrow'+y).remove();
-        //   console.log('not found');
-        // }
       }
     }
   });
