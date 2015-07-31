@@ -15,24 +15,6 @@ $(document).ready(function(){
         $('#ping').append('<l>'+userArray[x].pingged[1]+'</l>');
       }
     }
-  }
-  // $('button').click(function(){
-  //   if($(this).attr('id') != $('#submitGamebtn').attr('id')){
-  //     var btnpressed = $(this).attr('id');
-  //     console.log(btnpressed);
-  //     for(var x = 0;x<userArray.length; x++){
-  //       if(userArray[x].username === loggedInUser){
-  //         for(var y = 0; y<userArray[x].games.length; y++){
-  //           if(userArray[x].games[y].gameName = $('#title'+y).text()){
-  //             userArray[x].games.splice(y,y);
-  //           }
-  //         }
-  //       }
-  //     }
-  //     $(this).parent().remove();
-  //     saveUsers();
-  //   }
-  // });
   var number = 0;
   $('#submitGamebtn').click(function(e){
     e.preventDefault();
