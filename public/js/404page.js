@@ -1,16 +1,17 @@
 // Color Blast!
 // License MIT
 // © 2014 Nate Wiley
+'use strict';
 (function(window) {
 
     var Game = {
 
         init: function() {
-            this.c = document.getElementById("game");
+            this.c = document.getElementById('game');
             this.c.width = this.c.width;
             this.c.height = this.c.height;
-            this.ctx = this.c.getContext("2d");
-            this.color = "rgba(20,20,20,.7)";
+            this.ctx = this.c.getContext('2d');
+            this.color = 'rgba(20,20,20,.7)';
             this.bullets = [];
             this.enemyBullets = [];
             this.enemies = [];
@@ -43,10 +44,10 @@
         },
 
         binding: function() {
-            window.addEventListener("keydown", this.buttonDown);
-            window.addEventListener("keyup", this.buttonUp);
-            window.addEventListener("keypress", this.keyPressed);
-            this.c.addEventListener("click", this.clicked);
+            window.addEventListener('keydown', this.buttonDown);
+            window.addEventListener('keyup', this.buttonUp);
+            window.addEventListener('keypress', this.keyPressed);
+            this.c.addEventListener('click', this.clicked);
         },
 
         clicked: function() {
@@ -139,23 +140,23 @@
         gameOver: function() {
             this.isGameOver = true;
             this.clear();
-            var message = "Game Over";
-            var message2 = "Score: " + Game.score;
-            var message3 = "Click or press Spacebar to Play Again";
+            var message = 'Game Over';
+            var message2 = 'Score: ' + Game.score;
+            var message3 = 'Click or press Spacebar to Play Again';
             this.pause();
-            this.ctx.fillStyle = "white";
-            this.ctx.font = "bold 30px Lato, sans-serif";
+            this.ctx.fillStyle = 'white';
+            this.ctx.font = 'bold 30px Lato, sans-serif';
             this.ctx.fillText(message, this.c.width / 2 - this.ctx.measureText(message).width / 2, this.c.height / 2 - 50);
             this.ctx.fillText(message2, this.c.width / 2 - this.ctx.measureText(message2).width / 2, this.c.height / 2 - 5);
-            this.ctx.font = "bold 16px Lato, sans-serif";
+            this.ctx.font = 'bold 16px Lato, sans-serif';
             this.ctx.fillText(message3, this.c.width / 2 - this.ctx.measureText(message3).width / 2, this.c.height / 2 + 30);
         },
 
         updateScore: function() {
-            this.ctx.fillStyle = "white";
-            this.ctx.font = "16px Lato, sans-serif";
-            this.ctx.fillText("Score: " + this.score, 8, 20);
-            this.ctx.fillText("Lives: " + (this.maxLives - this.life), 8, 40);
+            this.ctx.fillStyle = 'white';
+            this.ctx.font = '16px Lato, sans-serif';
+            this.ctx.fillText('Score: ' + this.score, 8, 20);
+            this.ctx.fillText('Lives: ' + (this.maxLives - this.life), 8, 40);
         },
 
         loop: function() {
@@ -208,7 +209,7 @@
         this.movingRight = false;
         this.speed = 8;
         this.invincible = false;
-        this.color = "white";
+        this.color = 'white';
     };
 
 
@@ -265,7 +266,7 @@
         this.vy = 8;
         this.index = Game.bulletIndex;
         this.active = true;
-        this.color = "white";
+        this.color = 'white';
 
     };
 
@@ -298,7 +299,7 @@
         this.speed = Game.random(2, 3);
         this.shootingSpeed = Game.random(30, 80);
         this.movingLeft = Math.random() < 0.5 ? true : false;
-        this.color = "hsl(" + Game.random(0, 360) + ", 60%, 50%)";
+        this.color = 'hsl(' + Game.random(0, 360) + ', 60%, 50%)';
 
     };
 
@@ -391,7 +392,7 @@
         this.y = y;
         this.vx = Game.random(-5, 5);
         this.vy = Game.random(-5, 5);
-        this.color = color || "orange";
+        this.color = color || 'orange';
         Game.particles[Game.particleIndex] = this;
         this.id = Game.particleIndex;
         Game.particleIndex++;

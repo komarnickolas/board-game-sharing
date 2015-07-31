@@ -31,11 +31,7 @@ $(document).ready(function() {
         forumsStatus.push(newcomment);
         console.log(forumsStatus);
 
-        var data = JSON.stringify({
-            forums: {
-                forumsStatus
-            }
-        });
+        var data = JSON.stringify({forums: {forumsStatus}});
         console.log(data);
         console.log(db + collection + apiKey);
         $.ajax({

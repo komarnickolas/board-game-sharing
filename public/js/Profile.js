@@ -1,3 +1,4 @@
+'use strict';
 $(document).ready(function() {
     $('#Loginbtn').hide();
     $('#stopEditing').hide();
@@ -7,9 +8,9 @@ $(document).ready(function() {
                 $('#tablebody').append('<tr id="newrow' + y + '"></tr>');
                 $('#newrow' + y).append('<td id="title' + y + '">' + userArray[x].games[y].gameName + '</td>');
                 $('#newrow' + y).append('<td id="nop' + y + '">' + userArray[x].games[y].numberOfPlayers + '</td>');
-                $('#newrow' + y).append('<td id="status' + y + '">' + userArray[x].games[y].gameStatus + '</td>');
+                $('#newrow' + y).append('<td id="status' + y + '"">' + userArray[x].games[y].gameStatus + '</td>');
                 $('#newrow' + y).append('<td id="condition' + y + '">' + userArray[x].games[y].gameCondition + '</td>');
-                // $('#newrow'+y).append('<button id="'+y+'"> <image src="css/resources/minus.png"></image></button>');
+                // $('#newrow'+y).append('<button id=''+y+''> <image src='css/resources/minus.png'></image></button>');
             }
             if (userArray[x].pingged[0] === true) {
                 $('#ping').append('<l>' + userArray[x].pingged[1] + '</l>');
@@ -26,7 +27,7 @@ $(document).ready(function() {
         var newMaxGameNumberOfPlayers = $('#maxDrop').val();
         var newGameStatus = $('#statusDrop').val();
         var newGameCondition = $('#conditionDrop').val();
-        console.log(newGameTitle, newMinGameNumberOfPlayers + "-" + newMaxGameNumberOfPlayers, newGameStatus, newGameCondition);
+        console.log(newGameTitle, newMinGameNumberOfPlayers + '-' + newMaxGameNumberOfPlayers, newGameStatus, newGameCondition);
         var userProfileToEdit = undefined;
         for (var x = 0; x < userArray.length; x++) {
             if (userArray[x].username != localStorage.getItem('CurrentUser')) {
@@ -36,17 +37,17 @@ $(document).ready(function() {
             }
         }
         console.log(number);
-        userArray[number].games.push(new game(newGameTitle, newGameStatus, newGameCondition, newMinGameNumberOfPlayers + "-" + newMaxGameNumberOfPlayers, number));
+        userArray[number].games.push(new game(newGameTitle, newGameStatus, newGameCondition, newMinGameNumberOfPlayers + '-' + newMaxGameNumberOfPlayers, number));
         console.log(userArray[number]);
-        $('#tablebody').append(render(newGameTitle, newGameStatus, newGameCondition, newMinGameNumberOfPlayers + "-" + newMaxGameNumberOfPlayers, number));
+        $('#tablebody').append(render(newGameTitle, newGameStatus, newGameCondition, newMinGameNumberOfPlayers + '-' + newMaxGameNumberOfPlayers, number));
         saveUsers();
-        $('#gamesTitle').val("");
-        $('#gamesNumberOfPlayers').val("");
-        $('#gamesStatus').val("");
-        $('#gamesCondition').val("");
+        $('#gamesTitle').val('');
+        $('#gamesNumberOfPlayers').val('');
+        $('#gamesStatus').val('');
+        $('#gamesCondition').val('');
     });
 
     function render(t, s, c, n) {
-        return "<tr id='" + number + "'><td>" + t + "</td><td>" + n + "</td><td>" + s + "</td><td>" + c + "</td></tr>";
+        return '<tr id="' + number + '"><td>' + t + '</td><td>' + n + '</td><td>' + s + '</td><td>' + c + '</td></tr>';
     }
 });

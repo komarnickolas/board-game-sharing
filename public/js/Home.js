@@ -1,20 +1,21 @@
+'use strict';
 $(document).ready(function() {
     $('#Loginbtn').click(function() {
         console.log('clicked');
-        window.location.href = "#openModal";
+        window.location.href = '#openModal';
     });
-    localStorage.setItem('SearchQuery', "");
+    localStorage.setItem('SearchQuery', '');
     $('#submitbtn').click(function() {
         var searchQuery = $('#inputbox').val();
         console.log(searchQuery);
         localStorage.setItem('SearchQuery', searchQuery);
-        window.location.href = "Search.html";
+        window.location.href = 'Search.html';
     });
 });
 $('#searchbtn').click(function(e) {
     e.preventDefault();
     var query = $('#title').val();
-    $('#title').val("");
+    $('#title').val('');
     for (var z = 0; z < tableSize; z++) {
         $('#newrow' + z).remove();
     }
