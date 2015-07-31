@@ -1,0 +1,7 @@
+**/node_modules/
+  public/js/deps
+  Procfile
+  README.md
+  public/**.html
+  public/css/**.css
+  LICENSE
