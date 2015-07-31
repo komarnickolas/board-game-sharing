@@ -66,3 +66,6 @@ tbody tr:nth-child(odd) {
   vertical-align: middle;
   transition: color .2s ease-in-out, opacity 2s ease-in-out;
 }
+.tableSelector{
+  height: 20px;
+}

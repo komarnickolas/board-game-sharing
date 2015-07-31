@@ -146,7 +146,7 @@ form input:focus {
   width: 300px;
   color: #53e3a6;
 }
-form button {
+form buttonnot(	){
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
