@@ -68,7 +68,7 @@ $(document).ready(function(){
     $('#newrow'+x+y).append('<td>'+userArray[x].games[y].gameCondition+'</td>');
     $('#newrow'+x+y).append('<td>'+userArray[x].games[y].gameStatus+'</td>');
     $('#newrow'+x+y).append('<td id="userSelected'+x+'">'+userArray[x].username+'</td>');
-    $('#newrow'+x+y).append('<td><button name="'+x+'">I want this game</button></td>');
+    $('#newrow'+x+y).append('<td><button name="'+x+'">Poke Owner</button></td>');
   }
   $('button').click(function(e){
     e.preventDefault();
