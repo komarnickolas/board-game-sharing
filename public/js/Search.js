@@ -40,8 +40,8 @@ $(document).ready(function() {
         $('#newrow' + x + y).append('<td>' + userArray[x].games[y].numberOfPlayers + '</td>');
         $('#newrow' + x + y).append('<td>' + userArray[x].games[y].gameCondition + '</td>');
         $('#newrow' + x + y).append('<td>' + userArray[x].games[y].gameStatus + '</td>');
-        $('#newrow' + x + y).append('<td id="userSelected"' + x + '">' + userArray[x].username + '</td>');
-        $('#newrow' + x + y).append('<td><button name="' + x + '">Poke Owner</button></td>');
+        $('#newrow' + x + y).append('<td id="userSelected' + y + '">' + userArray[x].username + '</td>');
+        $('#newrow' + x + y).append('<td><button class = "poke" name="' + y + '">Poke Owner</button></td>');
     }
     for (var x = 0; x < userArray.length; x++) {
         userSize++;
@@ -88,7 +88,7 @@ $(document).ready(function() {
             }
         }
     });
-    $('button').click(function(e) {
+    $('.poke').click(function(e) {
         e.preventDefault();
         var btnpressed = $(this).attr('name');
         console.log(btnpressed);
@@ -97,7 +97,7 @@ $(document).ready(function() {
         var userSelected = $('#userSelected' + btnpressed).text();
         console.log(userSelected);
         for (var x = 0; x < userArray.length; x++) {
-            if (userSelected === userArray[x].username) {
+            if (userArray[x].username === userSelected) {
                 userArray[x].pingged[0] = true;
                 userArray[x].pingged[1] += 1;
                 console.log(userArray[x].pingged);
