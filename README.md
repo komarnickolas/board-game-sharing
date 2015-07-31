@@ -48,3 +48,7 @@
 *7/30/15
 - Forum delting and saving db
 - Profile ping
+
+
+*credit
+- natewiley for 404 page game
