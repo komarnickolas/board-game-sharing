@@ -16,24 +16,8 @@ $(document).ready(function(){
       }
     }
   }
-  // $('button').click(function(){
-  //   if($(this).attr('id') != $('#submitGamebtn').attr('id')){
-  //     var btnpressed = $(this).attr('id');
-  //     console.log(btnpressed);
-  //     for(var x = 0;x<userArray.length; x++){
-  //       if(userArray[x].username === loggedInUser){
-  //         for(var y = 0; y<userArray[x].games.length; y++){
-  //           if(userArray[x].games[y].gameName = $('#title'+y).text()){
-  //             userArray[x].games.splice(y,y);
-  //           }
-  //         }
-  //       }
-  //     }
-  //     $(this).parent().remove();
-  //     saveUsers();
-  //   }
-  // });
   var number = 0;
+  console.log(number);
   $('#submitGamebtn').click(function(e){
     e.preventDefault();
     console.log('adding game');
@@ -45,8 +29,11 @@ $(document).ready(function(){
     console.log(newGameTitle, newMinGameNumberOfPlayers +"-"+ newMaxGameNumberOfPlayers, newGameStatus, newGameCondition);
     var userProfileToEdit = undefined;
     for(var x = 0; x<userArray.length;x++){
-      if(userArray[x].username != loggedInUser){
+      if(userArray[x].username != localStorage.getItem('CurrentUser')){
         number++;
+      }
+      else{
+        break;
       }
     }
     console.log(number);
@@ -63,104 +50,3 @@ $(document).ready(function(){
     return "<tr id='"+number+"'><td>"+t+"</td><td>"+n+"</td><td>"+s+"</td><td>"+c+"</td></tr>";
   }
 });
-// $('#editGamebtn').click(function(e){
-//   e.preventDefault();
-//   console.log('clicked');
-//   $('td').each(function(){
-//     if($(this).attr('class') === 'title'){
-//       var value = $(this).text();
-//       $(this).replaceWith('<td><input placeholder="'+value+'"></input></td>');
-//     }
-//     else if($(this).attr('class') === 'nop'){
-//       var value = $(this).text();
-//       $(this).replaceWith("<td><select id='minDrop'><option value='1'>Minimun 1</option><option value='2'>2</option><option value='3'>3</option><option value='4'>4</option><option value='5'>5</option><option value='6'>6</option><option value='7'>7</option><option value='8'>8+</option></select><select id='maxDrop'><option value='1'>Maximum 1</option><option value='2'>2</option><option value='3'>3</option><option value='4'>4</option><option value='5'>5</option><option value='6'>6</option><option value='7'>7</option><option value='8'>8+</option></select></td>");
-//     }
-//     else if($(this).attr('class') === 'status'){
-//       var value = $(this).text();
-//       $(this).replaceWith("<td><select id='statusDrop'><option value='checkedIn'>Checked In</option><option value='checkedOut'>Checked Out</option></select></td>");
-//     }
-//     else if($(this).attr('class') === 'condition'){
-//       var value = $(this).text();
-//       $(this).replaceWith("<td><select id='conditionDrop'><option value='5'>5 (best)</option><option value='4'>4</option><option value='3'>3</option><option value='2'>2</option><option value='1'>1 (worst)</option><option value='incomplete'>Incomplete</option></select></td>");
-//     }
-//   });
-//   $('#stopEditing').show();
-// });
-// $('#stopEditing').click(function(e){
-//   e.preventDefault();
-//   for(var x = 0; x<userArray.length; x++){
-//     if(userArray[x].username === loggedInUser){
-//       for(var y = 0; y<userArray[x].games.length; y++){
-//         if(userArray[x].games[y].gameName === "" || userArray[x].games[y].gameName === "undefined"){
-//           console.log("blank found");
-//           userArray[x].games.splice(y,y);
-//         }
-//         else{
-//           console.log("blank not found");
-//         }
-//       }
-//     }
-//   }
-//   $('td').each(function(){
-//     console.log($(this));
-//     if($(this).attr('class') === 'title'){
-//     var value = $(this).val();
-//       for(var x = 0; x<userArray.length; x++){
-//         if(userArray[x].username === loggedInUser){
-//           for(var y = 0; y<userArray[x].games.length; y++){
-//             if(userArray[x].games[y].gameName != value){
-//               userArray[x].games[y].gameName = value;
-//             }
-//           }
-//         }
-//       }
-//     }
-//     if($(this).attr('class') === 'nop'){
-//     var value = $(this).val();
-//       for(var x = 0; x<userArray.length; x++){
-//         if(userArray[x].username === loggedInUser){
-//           for(var y = 0; y<userArray[x].games.length; y++){
-//             if(userArray[x].games[y].numberOfPlayers != value){
-//               userArray[x].games[y].numberOfPlayers = value;
-//             }
-//           }
-//         }
-//       }
-//     }
-//     if($(this).attr('class') === 'status'){
-//     var value = $(this).val();
-//       for(var x = 0; x<userArray.length; x++){
-//         if(userArray[x].username === loggedInUser){
-//           for(var y = 0; y<userArray[x].games.length; y++){
-//             if(userArray[x].games[y].gameStatus != value){
-//               userArray[x].games[y].gameStatus = value;
-//             }
-//           }
-//         }
-//       }
-//     }
-//     if($(this).attr('class') === 'condition'){
-//     var value = $(this).val();
-//       for(var x = 0; x<userArray.length; x++){
-//         if(userArray[x].username === loggedInUser){
-//           for(var y = 0; y<userArray[x].games.length; y++){
-//             if(userArray[x].games[y].gameCondition != value){
-//               userArray[x].games[y].gameCondition = value;
-//             }
-//           }
-//         }
-//       }
-//     }
-//     if($(this).attr('class') != 'addGame'){
-//       value = $(this).find('input').val();
-//       if(value === ""){
-//         value = $(this).find('input').attr('placeholder');
-//         console.log(value);
-//       }
-//       $(this).replaceWith('<td>'+value+'</td>');
-//     }
-//   });
-//   console.log(userArray);
-//   $('#stopEditing').hide();
-//   saveUsers();
-// });
