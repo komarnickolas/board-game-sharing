@@ -1,5 +1,22 @@
 var forumsStatus = [];
 var forumCollection = "/collections/forums/55b84bdbe4b0230ce90fe0d7";
+var userArray = [];
+var user = function(u, p) {
+    this.username = u;
+    this.password = p;
+    this.pingged = [false, 0];
+    this.games = [];
+}
+var game = function(n, s, c, p, i) {
+    this.gameName = n;
+    this.gameStatus = s;
+    this.gameCondition = c;
+    this.numberOfPlayers = p;
+    this.gameId = i;
+}
+var db = 'https://api.mongolab.com/api/1/databases/users';
+var collection = "/collections/usernames/55b6862ae4b077bc38f60527";
+var apiKey = '?apiKey=CmxO8Pu1HeEpa6MSJyWa3ceKlKExom1_';
 $(document).ready(function() {
     $.ajax({
         url: db + forumCollection + apiKey,

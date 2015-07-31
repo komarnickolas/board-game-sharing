@@ -28,14 +28,14 @@ $(document).ready(function() {
     var userToAdd = undefined;
     var userLoggedIn = false;
     var retrievedIsUserLoggedIn = localStorage.getItem('IsUserLoggedIn');
-    if (retrievedIsUserLoggedIn != null) {
+    if (retrievedIsUserLoggedIn !== null) {
         userLoggedIn = true;
         $('#Loginbtn').hide();
     }
     var currentUser = undefined;
     if (userLoggedIn === true) {
         var retrievedCurrentUser = localStorage.getItem('CurrentUser');
-        if (retrievedCurrentUser != null) {
+        if (retrievedCurrentUser !== null) {
             currentUser = retrievedCurrentUser;
             console.log(currentUser);
             loginUser();
@@ -121,7 +121,7 @@ var saveUsers = function() {
             console.log('success');
         }
     });
-}
+};
 var getUsers = function() {
     var users = $.ajax({
         url: db + collection + apiKey,
@@ -138,4 +138,4 @@ var getUsers = function() {
     console.log(existingUsers.username.userArray);
     userArray = existingUsers.username.userArray;
     console.log(userArray);
-}
+};

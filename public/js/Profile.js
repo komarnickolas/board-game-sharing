@@ -1,7 +1,38 @@
 'use strict';
+var userArray = [];
+var loggedInUser = localStorage.getItem('CurrentUser');
+var game = function(n, s, c, p, i) {
+    this.gameName = n;
+    this.gameStatus = s;
+    this.gameCondition = c;
+    this.numberOfPlayers = p;
+    this.gameId = i;
+};
+var db = 'https://api.mongolab.com/api/1/databases/users';
+var collection = "/collections/usernames/55b6862ae4b077bc38f60527";
+var apiKey = '?apiKey=CmxO8Pu1HeEpa6MSJyWa3ceKlKExom1_';
+var saveUsers = function() {
+    var data = JSON.stringify({
+        username: {
+            userArray
+        }
+    });
+    console.log(data);
+    console.log(db + collection + apiKey);
+    $.ajax({
+        url: db + collection + apiKey,
+        method: 'PUT',
+        data: data,
+        contentType: 'application/json',
+        success: function() {
+            console.log('success');
+        }
+    });
+};
 $(document).ready(function() {
     $('#Loginbtn').hide();
     $('#stopEditing').hide();
+    var number = 0;
     for (var x = 0; x < userArray.length; x++) {
         if (userArray[x].username === loggedInUser) {
             for (var y = 0; y < userArray[x].games.length; y++) {
@@ -17,7 +48,9 @@ $(document).ready(function() {
             }
         }
     }
-    var number = 0;
+    function render(t, s, c, n) {
+        return '<tr id="' + number + '"><td>' + t + '</td><td>' + n + '</td><td>' + s + '</td><td>' + c + '</td></tr>';
+    }
     console.log(number);
     $('#submitGamebtn').click(function(e) {
         e.preventDefault();
@@ -28,9 +61,8 @@ $(document).ready(function() {
         var newGameStatus = $('#statusDrop').val();
         var newGameCondition = $('#conditionDrop').val();
         console.log(newGameTitle, newMinGameNumberOfPlayers + '-' + newMaxGameNumberOfPlayers, newGameStatus, newGameCondition);
-        var userProfileToEdit = undefined;
         for (var x = 0; x < userArray.length; x++) {
-            if (userArray[x].username != localStorage.getItem('CurrentUser')) {
+            if (userArray[x].username !== localStorage.getItem('CurrentUser')) {
                 number++;
             } else {
                 break;
@@ -46,8 +78,4 @@ $(document).ready(function() {
         $('#gamesStatus').val('');
         $('#gamesCondition').val('');
     });
-
-    function render(t, s, c, n) {
-        return '<tr id="' + number + '"><td>' + t + '</td><td>' + n + '</td><td>' + s + '</td><td>' + c + '</td></tr>';
-    }
 });

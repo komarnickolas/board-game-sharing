@@ -1,4 +1,5 @@
 'use strict';
+var userArray = [];
 $(document).ready(function() {
     $('#Loginbtn').click(function() {
         console.log('clicked');
@@ -12,6 +13,16 @@ $(document).ready(function() {
         window.location.href = 'Search.html';
     });
 });
+var tableSize = 0;
+function addRow(x, y) {
+  $('#content').append('<tr id="newrow' + x + y + '"></tr>');
+  $('#newrow' + x + y).append('<td id="' + y + '">' + userArray[x].games[y].gameName + '</td>');
+  $('#newrow' + x + y).append('<td>' + userArray[x].games[y].numberOfPlayers + '</td>');
+  $('#newrow' + x + y).append('<td>' + userArray[x].games[y].gameCondition + '</td>');
+  $('#newrow' + x + y).append('<td>' + userArray[x].games[y].gameStatus + '</td>');
+  $('#newrow' + x + y).append('<td id="userSelected"' + x + '">' + userArray[x].username + '</td>');
+  $('#newrow' + x + y).append('<td><button name="' + x + '">Poke Owner</button></td>');
+}
 $('#searchbtn').click(function(e) {
     e.preventDefault();
     var query = $('#title').val();
