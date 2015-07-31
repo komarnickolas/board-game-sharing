@@ -48,6 +48,7 @@ $(document).ready(function() {
             }
         }
     }
+
     function render(t, s, c, n) {
         return '<tr id="' + number + '"><td>' + t + '</td><td>' + n + '</td><td>' + s + '</td><td>' + c + '</td></tr>';
     }
