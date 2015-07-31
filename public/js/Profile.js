@@ -39,16 +39,33 @@ $(document).ready(function() {
                 $('#tablebody').append('<tr id="newrow' + y + '"></tr>');
                 $('#newrow' + y).append('<td id="title' + y + '">' + userArray[x].games[y].gameName + '</td>');
                 $('#newrow' + y).append('<td id="nop' + y + '">' + userArray[x].games[y].numberOfPlayers + '</td>');
-                $('#newrow' + y).append('<td id="status' + y + '"">' + userArray[x].games[y].gameStatus + '</td>');
+                $('#newrow' + y).append('<td id="status' + y + '""><select class="tableSelector" id="statusDrop' + y + '"><option id="checkedIn" value="checkedIn">Checked In</option><option id="checkedOut" value="checkedOut">Checked Out</option></select></td>');
                 $('#newrow' + y).append('<td id="condition' + y + '">' + userArray[x].games[y].gameCondition + '</td>');
-                // $('#newrow'+y).append('<button id=''+y+''> <image src='css/resources/minus.png'></image></button>');
+                // $('#newrow'+y).append('<button id=''+y+''> <image src='css/resources/minus.png'></image></button>');)
+                $('#statusDrop'+y).val(userArray[x].games[y].gameStatus);
+
             }
             if (userArray[x].pingged[0] === true) {
                 $('#ping').append('<l>' + userArray[x].pingged[1] + '</l>');
             }
         }
     }
-
+    $('select').change(function(){
+      console.log($(this).val());
+      for(var x = 0; x < userArray.length; x++){
+        if(userArray[x].username === localStorage.getItem('CurrentUser')){
+          for(var y = 0; y < userArray[x].games.length; y++){
+            var currentGame = $(this).closest('tr').find('td:eq(0)').text();
+            if(userArray[x].games[y].gameName === currentGame){
+              userArray[x].games[y].gameStatus = $(this).val();
+              break;
+            }
+          }
+          break;
+        }
+      }
+      saveUsers();
+    });
     function render(t, s, c, n) {
         return '<tr id="' + number + '"><td>' + t + '</td><td>' + n + '</td><td>' + s + '</td><td>' + c + '</td></tr>';
     }
