@@ -24,11 +24,6 @@ $(document).ready(function(){
     var queryMX = $('#maxDrop').val();
     var queryS = $('#statusDrop').val();
     var queryC = $('#conditionDrop').val();
-    $('#title').val("");
-    $('#minDrop').val("minimum 1");
-    $('#maxDrop').val("maximum 1");
-    $('#statusDrop').val("Checked in");
-    $('#conditionDrop').val("5(best)");
     for(var z = 0; z<userSize; z++){
       console.log(z);
       for(var a = 0; a<tableSize; a++){
