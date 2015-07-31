@@ -37,8 +37,18 @@
 - BUBLES on login!
 - login styled
 - Stylesheets split up
-<<<<<<< HEAD
 - Added Profile for users to add games into library
-=======
 - Social Media Links currently on About page inspired by  http://codepen.io/vpdemo/pen/dPdymj
->>>>>>> c699a90dff8a2e4f96faf3a352f71303fe292026
+
+*7/29/15
+- Footer
+- search up and runing
+- forum delete
+
+*7/30/15
+- Forum delting and saving db
+- Profile ping
+
+
+*credit
+- natewiley for 404 page game
