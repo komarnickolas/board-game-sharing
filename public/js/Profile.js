@@ -15,7 +15,9 @@ $(document).ready(function(){
         $('#ping').append('<l>'+userArray[x].pingged[1]+'</l>');
       }
     }
+  }
   var number = 0;
+  console.log(number);
   $('#submitGamebtn').click(function(e){
     e.preventDefault();
     console.log('adding game');
@@ -27,8 +29,11 @@ $(document).ready(function(){
     console.log(newGameTitle, newMinGameNumberOfPlayers +"-"+ newMaxGameNumberOfPlayers, newGameStatus, newGameCondition);
     var userProfileToEdit = undefined;
     for(var x = 0; x<userArray.length;x++){
-      if(userArray[x].username != loggedInUser){
+      if(userArray[x].username != localStorage.getItem('CurrentUser')){
         number++;
+      }
+      else{
+        break;
       }
     }
     console.log(number);
