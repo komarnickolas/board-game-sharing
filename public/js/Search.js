@@ -40,8 +40,8 @@ $(document).ready(function() {
         $('#newrow' + x + y).append('<td>' + userArray[x].games[y].numberOfPlayers + '</td>');
         $('#newrow' + x + y).append('<td>' + userArray[x].games[y].gameCondition + '</td>');
         $('#newrow' + x + y).append('<td>' + userArray[x].games[y].gameStatus + '</td>');
-        $('#newrow' + x + y).append('<td id="userSelected' + y + '">' + userArray[x].username + '</td>');
-        $('#newrow' + x + y).append('<td><button class = "poke" name="' + y + '">Poke Owner</button></td>');
+        $('#newrow' + x + y).append('<td id="userSelected' + x + '">' + userArray[x].username + '</td>');
+        $('#newrow' + x + y).append('<td><button class = "poke" name="' + x + '">Poke Owner</button></td>');
     }
     for (var x = 0; x < userArray.length; x++) {
         userSize++;
