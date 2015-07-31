@@ -39,9 +39,11 @@ $(document).ready(function() {
                 $('#tablebody').append('<tr id="newrow' + y + '"></tr>');
                 $('#newrow' + y).append('<td id="title' + y + '">' + userArray[x].games[y].gameName + '</td>');
                 $('#newrow' + y).append('<td id="nop' + y + '">' + userArray[x].games[y].numberOfPlayers + '</td>');
-                $('#newrow' + y).append('<td id="status' + y + '""><select class="tableSelector" id="statusDrop' + y + '"><option value="checkedIn">Checked In</option><option value="checkedOut">Checked Out</option></select></td>');
+                $('#newrow' + y).append('<td id="status' + y + '""><select class="tableSelector" id="statusDrop' + y + '"><option id="checkedIn" value="checkedIn">Checked In</option><option id="checkedOut" value="checkedOut">Checked Out</option></select></td>');
                 $('#newrow' + y).append('<td id="condition' + y + '">' + userArray[x].games[y].gameCondition + '</td>');
-                // $('#newrow'+y).append('<button id=''+y+''> <image src='css/resources/minus.png'></image></button>');
+                // $('#newrow'+y).append('<button id=''+y+''> <image src='css/resources/minus.png'></image></button>');)
+                $('#statusDrop'+y).val(userArray[x].games[y].gameStatus);
+
             }
             if (userArray[x].pingged[0] === true) {
                 $('#ping').append('<l>' + userArray[x].pingged[1] + '</l>');
@@ -56,7 +58,6 @@ $(document).ready(function() {
             var currentGame = $(this).closest('tr').find('td:eq(0)').text();
             if(userArray[x].games[y].gameName === currentGame){
               userArray[x].games[y].gameStatus = $(this).val();
-              console.log(userArray[x]);
               break;
             }
           }
