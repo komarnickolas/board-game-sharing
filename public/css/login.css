@@ -1,9 +1,9 @@
 .modalDialog {
 	position: fixed;
-	top: 30%;
-	right: 35%;
-	bottom: 35%;
-	left: 35%;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
 	background: rgba(0,0,0,0.8);
 	z-index: 99999;
 	opacity:0;
@@ -19,9 +19,6 @@
 
 .modalDialog > div {
 	width: 400px;
-	position: relative;
-	margin: 10% auto;
-	padding: 5px 20px 13px 20px;
 	border-radius: 10px;
 	background: #228fa2;
 	background: -moz-linear-gradient(#228fa2, #1c8193);
