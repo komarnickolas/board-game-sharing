@@ -19,6 +19,7 @@
 
 .modalDialog > div {
 	width: 400px;
+	margin-left: 50%;
 	border-radius: 10px;
 	background: #228fa2;
 	background: -moz-linear-gradient(#228fa2, #1c8193);
